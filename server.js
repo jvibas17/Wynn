@@ -8,7 +8,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGIN || 'https://vegasviphost.net',
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(express.json());
 
 app.post('/api/chat', async (req, res) => {

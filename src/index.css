@@ -67,15 +67,15 @@
     }
   }
 
-  /* Prevent text selection on mobile */
+  /* Prevent text selection on interactive elements only (not content) */
   @media (max-width: 768px) {
-    * {
+    button, nav, .touch-manipulation {
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       user-select: none;
     }
 
-    input, textarea {
+    input, textarea, p, h1, h2, h3, h4, h5, h6, li, span, a {
       -webkit-user-select: text;
       user-select: text;
     }
@@ -237,6 +237,34 @@
 
   .input-field:focus {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+
+  .input-field--error {
+    @apply border-red-500 focus:border-red-400;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+  }
+
+  .input-field--error:focus {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+  }
+
+  .input-error-message {
+    @apply text-red-400 text-xs sm:text-sm mt-1 pl-1;
+  }
+
+  /* Focus visible rings for keyboard accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  .cta-button:focus-visible,
+  .cta-button-outline:focus-visible {
+    outline: 2px solid theme('colors.royal.500');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .input-field:focus-visible {
+    outline: 2px solid theme('colors.royal.500');
+    outline-offset: 2px;
   }
 
   .reward-card {
