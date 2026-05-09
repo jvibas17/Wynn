@@ -1,4 +1,6 @@
 import { StrictMode } from 'react';
+
+console.log('🚀 Wynn VIP — deployment working!');
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import { LanguageProvider } from './contexts/LanguageContext';
