@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, MapPin } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { LeadCaptureForm } from '../components/LeadCaptureForm';

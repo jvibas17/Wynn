@@ -1,4 +1,3 @@
-import React from 'react';
 import { CTAButton } from '../components/CTAButton';
 import { useLanguage } from '../contexts/LanguageContext';
 

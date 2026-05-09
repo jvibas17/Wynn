@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Crown, Menu, X } from 'lucide-react';
 import { AnimatedSection } from './components/AnimatedSection';
 import { CTAButton } from './components/CTAButton';
