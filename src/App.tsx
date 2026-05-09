@@ -135,6 +135,24 @@ function App() {
         </div>
       </section>
 
+      {/* Marquee ribbon — scrolling banner of values */}
+      <div className="marquee">
+        <div className="marquee-track">
+          <span className="marquee-item">Discreet</span>
+          <span className="marquee-item">Bespoke</span>
+          <span className="marquee-item">Multilingual</span>
+          <span className="marquee-item">Twenty-Four Hours</span>
+          <span className="marquee-item">Wynn Rewards</span>
+          <span className="marquee-item">VIP Access</span>
+          <span className="marquee-item">Discreet</span>
+          <span className="marquee-item">Bespoke</span>
+          <span className="marquee-item">Multilingual</span>
+          <span className="marquee-item">Twenty-Four Hours</span>
+          <span className="marquee-item">Wynn Rewards</span>
+          <span className="marquee-item">VIP Access</span>
+        </div>
+      </div>
+
       {/* Services */}
       <ServicesSection />
 

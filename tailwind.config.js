@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         'navy': {
-          50: '#f0f4f8',
+          50:  '#f0f4f8',
           100: '#d9e2ed',
           200: '#b3c5db',
           300: '#8da8c9',
@@ -18,7 +18,7 @@ export default {
           950: '#080b0f',
         },
         'royal': {
-          50: '#f5f3ff',
+          50:  '#f5f3ff',
           100: '#ede9fe',
           200: '#ddd6fe',
           300: '#c4b5fd',
@@ -31,12 +31,12 @@ export default {
           950: '#2e1065',
         },
         'cream': {
-          50: '#fdfdfb',
+          50:  '#fdfdfb',
           100: '#f9f8f2',
           200: '#f3f1e5',
         },
         'accent': {
-          50: '#f6f7fa',
+          50:  '#f6f7fa',
           100: '#edf0f5',
           200: '#dbe1eb',
           300: '#bcc7db',
@@ -54,9 +54,10 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
       },
       boxShadow: {
-        'royal': '0 0 20px rgba(139, 92, 246, 0.25)',
-        'navy': '0 0 25px rgba(31, 44, 61, 0.4)',
+        'royal':  '0 0 25px rgba(139, 92, 246, 0.3)',
+        'navy':   '0 0 25px rgba(8, 11, 15, 0.5)',
         'accent': '0 0 20px rgba(95, 109, 154, 0.3)',
+        'purple-glow': '0 0 60px rgba(139, 92, 246, 0.35)',
       },
     },
   },

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 @layer base {
   html {
@@ -11,7 +11,7 @@
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;
   }
-  
+
   body {
     font-family: 'Montserrat', sans-serif;
     @apply bg-navy-950;
@@ -19,9 +19,23 @@
     line-height: 1.6;
   }
 
+  /* Grain texture overlay on entire page */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.028;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant', serif;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
   }
 
   a, button {
@@ -164,9 +178,11 @@
   }
 
   .glass-card {
-    background: rgba(8, 11, 15, 0.5);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: rgba(8, 11, 15, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(139, 92, 246, 0.08);
     animation: pulse 4s ease-in-out infinite;
   }
 
@@ -174,7 +190,8 @@
     animation: none;
     transform: scale(1.02);
     transition: all 0.4s ease;
-    border-color: rgba(139, 92, 246, 0.3);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 8px 40px rgba(139, 92, 246, 0.15), inset 0 1px 0 rgba(139, 92, 246, 0.12);
   }
 
   .glass-card-red {
@@ -190,40 +207,41 @@
   }
 
   .glass-card-royal {
-    @apply bg-royal-900/50 backdrop-blur-lg border border-royal-400/20;
+    @apply bg-royal-900/20 backdrop-blur-xl border border-royal-400/20;
     background: linear-gradient(
       90deg,
-      rgba(139, 92, 246, 0.1),
-      rgba(139, 92, 246, 0.25),
-      rgba(139, 92, 246, 0.1)
+      rgba(139, 92, 246, 0.08),
+      rgba(139, 92, 246, 0.22),
+      rgba(139, 92, 246, 0.08)
     );
     background-size: 200% 100%;
     animation: shimmer 8s linear infinite;
   }
 
   .cta-button {
-    @apply bg-royal-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-semibold 
-    hover:bg-royal-400 transition-all duration-300 transform hover:scale-105 
-    shadow-royal flex items-center justify-center tracking-wide touch-manipulation;
+    @apply bg-royal-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-semibold
+    hover:bg-royal-400 transition-all duration-300 transform hover:scale-105
+    flex items-center justify-center tracking-wide touch-manipulation;
     animation: float 4s ease-in-out infinite;
     min-height: 3rem;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
   .cta-button:hover {
     animation: none;
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.55), 0 8px 25px rgba(0, 0, 0, 0.4);
   }
 
   .cta-button-outline {
-    @apply border-2 border-royal-500 text-royal-500 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full 
-    font-semibold hover:bg-royal-500/20 transition-all duration-300 
+    @apply border-2 border-royal-500 text-royal-500 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full
+    font-semibold hover:bg-royal-500/20 transition-all duration-300
     backdrop-blur-sm tracking-wide touch-manipulation;
     min-height: 3rem;
   }
 
   .input-field {
-    @apply w-full bg-navy-900/50 text-cream-100 placeholder-cream-50/70 
-    border-2 border-navy-800/50 rounded-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 
+    @apply w-full bg-navy-900/50 text-cream-100 placeholder-cream-50/70
+    border-2 border-navy-800/50 rounded-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5
     focus:outline-none focus:border-royal-500 focus:bg-navy-900/70 transition-all duration-300;
     font-size: 16px; /* Prevent iOS zoom */
     backdrop-filter: blur(8px);
@@ -236,7 +254,7 @@
   }
 
   .input-field:focus {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
   }
 
   .input-field--error {
@@ -260,6 +278,7 @@
     outline: 2px solid theme('colors.royal.500');
     outline-offset: 3px;
     border-radius: 4px;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.45);
   }
 
   .input-field:focus-visible {
@@ -291,9 +310,9 @@
   .bg-animate {
     background: linear-gradient(
       45deg,
-      rgba(139, 92, 246, 0.1) 0%,
+      rgba(139, 92, 246, 0.08) 0%,
       rgba(0, 0, 0, 0) 50%,
-      rgba(139, 92, 246, 0.1) 100%
+      rgba(139, 92, 246, 0.08) 100%
     );
     background-size: 200% 200%;
     animation: gradientMove 20s ease infinite;
@@ -476,6 +495,345 @@
     .container {
       max-width: 1600px;
     }
+  }
+
+  /* Purple shimmer text effect for hero headings */
+  .text-gold-foil {
+    background: linear-gradient(
+      135deg,
+      #c4b5fd 0%,
+      #f9f8f2 25%,
+      #8b5cf6 50%,
+      #ddd6fe 75%,
+      #a78bfa 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 5s linear infinite;
+  }
+
+  /* Thin purple divider line */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 92, 246, 0.6),
+      transparent
+    );
+    margin: 2rem 0;
+  }
+
+  /* Purple glow on stat numbers */
+  .text-gold-glow {
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.25);
+  }
+
+  /* Aurora ambient glow — subtle purple bloom behind sections */
+  .aurora-glow {
+    position: relative;
+  }
+
+  .aurora-glow::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── FRONTEND DESIGN SKILL ─────────────────────────────────────── */
+
+  /* Luxury section label: "01 — SERVICES" */
+  .luxury-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(139, 92, 246, 0.7);
+    margin-bottom: 1.5rem;
+  }
+
+  .luxury-label::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: rgba(139, 92, 246, 0.5);
+  }
+
+  /* Ornamental divider with center diamond */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.35), transparent);
+  }
+
+  .ornament-divider span {
+    width: 5px;
+    height: 5px;
+    background: rgba(139, 92, 246, 0.6);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* Diagonal clip top — slices section top-left to bottom-right */
+  .clip-diagonal-top {
+    clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0 100%);
+    margin-top: -2%;
+    padding-top: calc(2% + 3rem);
+  }
+
+  .clip-diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    padding-bottom: calc(4% + 3rem);
+  }
+
+  /* Oversized decorative background letter */
+  .deco-letter {
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-size: clamp(12rem, 30vw, 28rem);
+    font-weight: 700;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(139, 92, 246, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  /* Staggered reveal for child elements */
+  .stagger > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger > *:nth-child(2) { animation-delay: 0.15s; }
+  .stagger > *:nth-child(3) { animation-delay: 0.25s; }
+  .stagger > *:nth-child(4) { animation-delay: 0.35s; }
+  .stagger > *:nth-child(5) { animation-delay: 0.45s; }
+  .stagger > * {
+    opacity: 0;
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Italic serif pull quote style for subtitles */
+  .serif-italic {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  /* Asymmetric card — slightly rotated accent border */
+  .card-asymmetric {
+    position: relative;
+  }
+
+  .card-asymmetric::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(139,92,246,0.4) 0%, transparent 50%, rgba(139,92,246,0.1) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .card-asymmetric:hover::before {
+    opacity: 1;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2), 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  /* Glowing underline on headings */
+  .heading-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .heading-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.8), transparent);
+    border-radius: 2px;
+  }
+
+  /* ── REDESIGN — EDITORIAL LAYOUT SYSTEM ─────────────────────── */
+
+  /* Vertical side rail text — top to bottom rotated label */
+  .vertical-rail {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: rgba(139, 92, 246, 0.4);
+    white-space: nowrap;
+  }
+
+  /* Massive editorial section number — italic Cormorant outlined */
+  .editorial-number {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(8rem, 18vw, 16rem);
+    line-height: 0.85;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(139, 92, 246, 0.35);
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.18) 0%, transparent 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Editorial section header grid — number + title + subtitle */
+  .editorial-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-header {
+      grid-template-columns: 0.4fr 0.6fr;
+      gap: 4rem;
+      align-items: end;
+    }
+  }
+
+  /* Hero floating info card — compact panel for CTAs */
+  .hero-info-card {
+    @apply glass-card p-6 lg:p-8 rounded-2xl;
+    border-left: 3px solid rgba(139, 92, 246, 0.6);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(8, 11, 15, 0.7) 60%);
+  }
+
+  /* Roman numeral / year accent — huge background flourish */
+  .accent-numeral {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(6rem, 12vw, 12rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(139, 92, 246, 0.12);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Marquee ribbon — scrolling banner between sections */
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    background: rgba(8, 11, 15, 0.8);
+    padding: 1.25rem 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  .marquee-item {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: rgba(243, 241, 229, 0.55);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .marquee-item::after {
+    content: '✦';
+    color: rgba(139, 92, 246, 0.6);
+    font-size: 1rem;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Stats — massive editorial numbers with vertical labels */
+  .stat-massive {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(6rem, 14vw, 14rem);
+    line-height: 0.9;
+    background: linear-gradient(180deg, #c4b5fd 0%, #8b5cf6 50%, #5b21b6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.04em;
+  }
+
+  /* Asymmetric two-column grid for richer layouts */
+  .grid-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .grid-asymmetric {
+      grid-template-columns: 7fr 5fr;
+      gap: 5rem;
+    }
+  }
+
+  /* Heading display — extreme size, tight tracking */
+  .heading-display {
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+
+  .heading-display em {
+    font-weight: 300;
+    font-style: italic;
   }
 
   /* Print styles */

@@ -7,23 +7,30 @@ export function ContactSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative" id="contact">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative aurora-glow" id="contact">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&q=80')] bg-cover bg-bottom opacity-30 md:opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 to-navy-950/90"></div>
       </div>
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 relative">
         <AnimatedSection>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-center text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-            {t('contact.title')}
-          </h2>
-          <p className="text-center text-cream-200 mb-8 sm:mb-12 md:mb-16 lg:mb-24 max-w-4xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl px-2 sm:px-4">
-            {t('contact.subtitle')}
-          </p>
+          <div className="editorial-header mb-16 lg:mb-24">
+            <div className="editorial-number">03</div>
+            <div>
+              <div className="luxury-label">Connect</div>
+              <h2 className="heading-display text-white mb-6">
+                {t('contact.title')}
+              </h2>
+              <div className="ornament-divider w-48 mb-6"><span /></div>
+              <p className="serif-italic text-cream-200/75 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl">
+                {t('contact.subtitle')}
+              </p>
+            </div>
+          </div>
         </AnimatedSection>
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
           <AnimatedSection>
-            <div className="glass-card p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl">
+            <div className="glass-card card-asymmetric hover-lift p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl">
               <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6 md:mb-8 lg:mb-12">{t('contact.hostTitle')}</h3>
               <div className="space-y-4 sm:space-y-6 md:space-y-8">
                 <div className="flex items-center text-cream-100 group">
@@ -47,7 +54,7 @@ export function ContactSection() {
             </div>
           </AnimatedSection>
           <AnimatedSection>
-            <div className="glass-card p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl">
+            <div className="glass-card card-asymmetric hover-lift p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl">
               <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6 md:mb-8 lg:mb-12">{t('contact.contactInfo.title')}</h3>
               <LeadCaptureForm />
             </div>

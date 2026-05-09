@@ -7,7 +7,7 @@ import { tierBenefits } from '../data/tierBenefits';
 
 function InfoCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: React.ReactNode }) {
   return (
-    <div className="glass-card p-4 sm:p-6 lg:p-8 rounded-xl hover:bg-navy-900/50 transition-all duration-300">
+    <div className="glass-card card-asymmetric hover-lift p-4 sm:p-6 lg:p-8 rounded-xl transition-all duration-300">
       <div className="flex flex-col space-y-4">
         <div className="flex items-start space-x-4">
           <div className="p-3 rounded-lg bg-royal-500/10 flex-shrink-0">
@@ -30,16 +30,24 @@ export function ServicesSection() {
   const tiers = ['red', 'platinum', 'black'] as const;
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 bg-navy-950/95" id="services">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 bg-navy-950/95 aurora-glow" id="services">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 lg:mb-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-4 sm:mb-6 md:mb-8">
-              {t('services.title')}
-            </h2>
-            <p className="text-cream-100 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed px-2 sm:px-4">
-              {t('services.subtitle')}
-            </p>
+          <div className="editorial-header mb-16 lg:mb-24">
+            {/* Massive italic "01" */}
+            <div className="editorial-number">01</div>
+
+            {/* Title block aligns to bottom */}
+            <div>
+              <div className="luxury-label">Rewards &amp; Benefits</div>
+              <h2 className="heading-display text-white mb-6">
+                {t('services.title')}
+              </h2>
+              <div className="ornament-divider w-48 mb-6"><span /></div>
+              <p className="serif-italic text-cream-100/75 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl">
+                {t('services.subtitle')}
+              </p>
+            </div>
           </div>
         </AnimatedSection>
 

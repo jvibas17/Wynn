@@ -7,7 +7,7 @@ export function ExperienceSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative" id="experience">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative clip-diagonal-top clip-diagonal-bottom" id="experience">
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30 md:opacity-20"
@@ -18,10 +18,13 @@ export function ExperienceSection() {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+            <div className="editorial-number mb-4">02</div>
+            <div className="luxury-label">The Experience</div>
+            <h2 className="heading-display text-white mb-6">
               {t('experience.title')}
             </h2>
-            <p className="text-cream-100 mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+            <div className="ornament-divider w-48 mb-6"><span /></div>
+            <p className="serif-italic text-cream-100/75 mb-8 text-lg md:text-xl lg:text-2xl leading-relaxed">
               {t('experience.description')}
             </p>
             <ul className="space-y-3 sm:space-y-4 md:space-y-6">

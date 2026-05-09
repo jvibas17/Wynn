@@ -5,9 +5,15 @@ interface StatCardProps {
 
 export function StatCard({ number, text }: StatCardProps) {
   return (
-    <div className="glass-card p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 rounded-2xl transform hover:scale-105 transition-all duration-300">
-      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-royal-500 mb-3 sm:mb-4 md:mb-6 font-serif">{number}</div>
-      <div className="text-cream-100 uppercase tracking-wider text-base sm:text-lg md:text-xl lg:text-2xl">{text}</div>
+    <div className="relative px-6 lg:px-10 py-8 hover-lift transition-all duration-500 group">
+      {/* Massive editorial italic number */}
+      <div className="stat-massive">{number}</div>
+
+      {/* Vertical accent rule */}
+      <div className="absolute top-8 right-4 lg:right-8 w-px h-20 bg-gradient-to-b from-royal-500/60 to-transparent group-hover:h-32 transition-all duration-500"></div>
+
+      {/* Label */}
+      <div className="luxury-label mt-4">{text}</div>
     </div>
   );
 }
