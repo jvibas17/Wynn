@@ -3,8 +3,6 @@ import { Crown, Menu, X } from 'lucide-react';
 import { AnimatedSection } from './components/AnimatedSection';
 import { CTAButton } from './components/CTAButton';
 import { LanguageSwitch } from './components/LanguageSwitch';
-import { ChatBot } from './components/ChatBot';
-import { WhatsAppChat } from './components/WhatsAppChat';
 import { StatCard } from './components/StatCard';
 import { HostProfile } from './components/HostProfile';
 import { FAQSection } from './components/FAQSection';
@@ -19,7 +17,6 @@ import { useLanguage } from './contexts/LanguageContext';
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showWhatsAppChat, setShowWhatsAppChat] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -176,9 +173,9 @@ function App() {
         </div>
       </footer>
 
-      {/* Chatbot & WhatsApp */}
-      {!showWhatsAppChat && <ChatBot onOpenWhatsApp={() => setShowWhatsAppChat(true)} />}
-      {showWhatsAppChat && <WhatsAppChat onClose={() => setShowWhatsAppChat(false)} />}
+      {/* Chatbot & WhatsApp — disabled */}
+      {/* {!showWhatsAppChat && <ChatBot onOpenWhatsApp={() => setShowWhatsAppChat(true)} />} */}
+      {/* {showWhatsAppChat && <WhatsAppChat onClose={() => setShowWhatsAppChat(false)} />} */}
     </div>
   );
 }
