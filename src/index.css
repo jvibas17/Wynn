@@ -836,6 +836,19 @@
     font-style: italic;
   }
 
+  /* ── REWARD CARD — editorial tier card ──────────────────── */
+  .reward-card-editorial {
+    background: rgba(8, 11, 15, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  }
+
+  .reward-card-editorial:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(139, 92, 246, 0.12);
+  }
+
   /* ── PREMIER VIP HOST SERVICE — editorial service rows ──── */
   .service-editorial-row {
     position: relative;
