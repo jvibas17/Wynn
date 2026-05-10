@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Crown, Menu, X } from 'lucide-react';
 import wynnEncoreNight from '../Assets/wynn-encore-exterior-night.jpg';
 import { AnimatedSection } from './components/AnimatedSection';
-import { CTAButton } from './components/CTAButton';
 import { LanguageSwitch } from './components/LanguageSwitch';
 import { StatCard } from './components/StatCard';
 import { HostProfile } from './components/HostProfile';
@@ -53,25 +52,49 @@ function App() {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy-950/95 backdrop-blur-md py-2 sm:py-4 shadow-navy' : 'py-4 sm:py-6'}`}>
           <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
             <div className="flex items-center justify-between h-16 lg:h-20">
-              <button onClick={scrollToTop} className="flex items-center group flex-shrink-0" aria-label="Wynn Rewards - Scroll to top">
-                <Crown className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 text-royal-500 group-hover:scale-110 transition-transform" />
-                <span className="ml-2 sm:ml-3 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white font-serif group-hover:text-royal-500 transition-colors">Wynn Rewards</span>
+              <button onClick={scrollToTop} className="flex items-center gap-3 group flex-shrink-0" aria-label="Wynn Rewards - Scroll to top">
+                <span className="w-px h-7 sm:h-8 lg:h-10 bg-royal-500/60 group-hover:bg-royal-500 transition-colors duration-300 flex-shrink-0" />
+                <div className="flex flex-col leading-none">
+                  <span className="font-serif italic text-white text-xl sm:text-2xl lg:text-3xl leading-none tracking-wide group-hover:text-royal-300 transition-colors duration-300">Wynn</span>
+                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">Rewards</span>
+                </div>
               </button>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center justify-center flex-1 mx-4 lg:mx-8 xl:mx-12">
-                <div className="flex items-center space-x-6 xl:space-x-8">
-                  <a href="#services" className="text-white hover:text-royal-500 transition-colors text-xs md:text-sm lg:text-base tracking-wider uppercase font-medium whitespace-nowrap" aria-label="VIP Services">{t('nav.services')}</a>
-                  <a href="#experience" className="text-white hover:text-royal-500 transition-colors text-xs md:text-sm lg:text-base tracking-wider uppercase font-medium whitespace-nowrap" aria-label="VIP Experience">{t('nav.experience')}</a>
-                  <a href="#faq" className="text-white hover:text-royal-500 transition-colors text-xs md:text-sm lg:text-base tracking-wider uppercase font-medium whitespace-nowrap" aria-label="Frequently Asked Questions">{t('nav.faq')}</a>
-                  <a href="#contact" className="text-white hover:text-royal-500 transition-colors text-xs md:text-sm lg:text-base tracking-wider uppercase font-medium whitespace-nowrap" aria-label="Contact Winnie Lee">{t('nav.contact')}</a>
+              <div className="hidden md:flex items-center justify-center flex-1 mx-6 lg:mx-10 xl:mx-16">
+                <div className="flex items-center gap-7 xl:gap-10">
+                  {[
+                    { href: '#services', label: t('nav.services'), num: '01', ariaLabel: 'VIP Services' },
+                    { href: '#experience', label: t('nav.experience'), num: '02', ariaLabel: 'VIP Experience' },
+                    { href: '#faq', label: t('nav.faq'), num: '03', ariaLabel: 'Frequently Asked Questions' },
+                    { href: '#contact', label: t('nav.contact'), num: '04', ariaLabel: 'Contact Winnie Lee' },
+                  ].map(({ href, label, num, ariaLabel }) => (
+                    <a
+                      key={href}
+                      href={href}
+                      aria-label={ariaLabel}
+                      className="group relative flex flex-col items-center gap-0.5 py-1"
+                    >
+                      <span className="font-serif italic text-[0.5rem] text-royal-500/25 group-hover:text-royal-500/60 transition-colors duration-300 leading-none select-none">{num}</span>
+                      <span className="text-[0.65rem] lg:text-[0.7rem] tracking-[0.2em] uppercase text-white/55 group-hover:text-white transition-colors duration-300 whitespace-nowrap font-medium">{label}</span>
+                      <span className="absolute bottom-0 left-0 right-0 h-px bg-royal-500/0 group-hover:bg-royal-500/40 transition-all duration-300" />
+                    </a>
+                  ))}
                 </div>
               </div>
 
               {/* Desktop Language Switch & CTA */}
-              <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6 flex-shrink-0">
+              <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 flex-shrink-0">
                 <LanguageSwitch />
-                <CTAButton text={t('hero.cta.contact')} showArrow={true} href="#contact" aria-label="Contact Winnie Lee for VIP Services" className="text-xs md:text-sm lg:text-base px-3 md:px-4 lg:px-6 py-2 lg:py-3" />
+                <a
+                  href="#contact"
+                  aria-label="Contact Winnie Lee for VIP Services"
+                  onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="group flex items-center gap-2.5 border border-royal-500/35 hover:border-royal-500/70 px-4 lg:px-5 py-2 lg:py-2.5 transition-all duration-300 hover:bg-royal-500/5 flex-shrink-0"
+                >
+                  <span className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.18em] uppercase text-royal-400/70 group-hover:text-royal-300 transition-colors duration-300 whitespace-nowrap">{t('hero.cta.contact')}</span>
+                  <span className="text-royal-400/50 group-hover:text-royal-300 group-hover:translate-x-0.5 transition-all duration-300 text-xs leading-none">→</span>
+                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -92,23 +115,33 @@ function App() {
               <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6">
                 <div className="flex flex-col space-y-6">
                   {[
-                    { href: '#services', label: 'VIP Services', key: 'nav.services' },
-                    { href: '#experience', label: 'VIP Experience', key: 'nav.experience' },
-                    { href: '#faq', label: 'Frequently Asked Questions', key: 'nav.faq' },
-                    { href: '#contact', label: 'Contact Winnie Lee', key: 'nav.contact' },
-                  ].map(({ href, label, key }) => (
+                    { href: '#services', label: 'VIP Services', key: 'nav.services', num: '01' },
+                    { href: '#experience', label: 'VIP Experience', key: 'nav.experience', num: '02' },
+                    { href: '#faq', label: 'Frequently Asked Questions', key: 'nav.faq', num: '03' },
+                    { href: '#contact', label: 'Contact Winnie Lee', key: 'nav.contact', num: '04' },
+                  ].map(({ href, label, key, num }) => (
                     <a
                       key={href}
                       href={href}
-                      className="text-white hover:text-royal-500 transition-colors text-base sm:text-lg tracking-wider uppercase font-medium py-2 sm:py-3 border-b border-navy-800/50 touch-manipulation"
+                      className="group flex items-center gap-4 py-3 sm:py-4 border-b border-royal-500/10 touch-manipulation"
                       onClick={() => setIsMobileMenuOpen(false)}
                       aria-label={label}
                     >
-                      {t(key)}
+                      <span className="font-serif italic text-royal-500/30 text-sm w-6 flex-shrink-0 group-hover:text-royal-500/60 transition-colors">{num}</span>
+                      <span className="w-px h-4 bg-royal-500/15 flex-shrink-0 group-hover:bg-royal-500/40 transition-colors" />
+                      <span className="text-sm sm:text-base tracking-[0.18em] uppercase text-white/65 group-hover:text-white transition-colors duration-300">{t(key)}</span>
                     </a>
                   ))}
                   <div className="py-3"><LanguageSwitch /></div>
-                  <CTAButton text={t('hero.cta.contact')} className="w-full text-base sm:text-lg py-3 sm:py-4" showArrow={true} href="#contact" onClick={() => setIsMobileMenuOpen(false)} aria-label="Contact Winnie Lee for VIP Services" />
+                  <a
+                    href="#contact"
+                    aria-label="Contact Winnie Lee for VIP Services"
+                    onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    className="group flex items-center justify-between border border-royal-500/40 hover:border-royal-500/80 px-5 py-4 transition-all duration-300 hover:bg-royal-500/5"
+                  >
+                    <span className="text-sm tracking-[0.18em] uppercase text-royal-400/80 group-hover:text-royal-300 transition-colors">{t('hero.cta.contact')}</span>
+                    <span className="text-royal-400/50 group-hover:text-royal-300 group-hover:translate-x-1 transition-all duration-300">→</span>
+                  </a>
                 </div>
               </div>
             </div>

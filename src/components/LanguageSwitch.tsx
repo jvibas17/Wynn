@@ -1,50 +1,34 @@
 import { useLanguage } from '../contexts/LanguageContext';
 
+const LANGS = [
+  { code: 'en',    label: 'EN' },
+  { code: 'zh',    label: '简体' },
+  { code: 'zh-tw', label: '繁體' },
+  { code: 'ja',    label: '日本語' },
+] as const;
+
 export function LanguageSwitch() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center gap-0.5 sm:gap-1 md:gap-2">
-      <button
-        onClick={() => setLanguage('en')}
-        className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors touch-manipulation min-w-[2rem] sm:min-w-[2.5rem] md:min-w-[3rem] ${
-          language === 'en'
-            ? 'bg-royal-500 text-white'
-            : 'text-cream-100 hover:text-royal-500 hover:bg-royal-500/10'
-        }`}
-      >
-        EN
-      </button>
-      <button
-        onClick={() => setLanguage('zh')}
-        className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors touch-manipulation min-w-[2rem] sm:min-w-[2.5rem] md:min-w-[3rem] ${
-          language === 'zh'
-            ? 'bg-royal-500 text-white'
-            : 'text-cream-100 hover:text-royal-500 hover:bg-royal-500/10'
-        }`}
-      >
-        简体
-      </button>
-      <button
-        onClick={() => setLanguage('zh-tw')}
-        className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors touch-manipulation min-w-[2rem] sm:min-w-[2.5rem] md:min-w-[3rem] ${
-          language === 'zh-tw'
-            ? 'bg-royal-500 text-white'
-            : 'text-cream-100 hover:text-royal-500 hover:bg-royal-500/10'
-        }`}
-      >
-        繁體
-      </button>
-      <button
-        onClick={() => setLanguage('ja')}
-        className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors touch-manipulation min-w-[2rem] sm:min-w-[2.5rem] md:min-w-[3rem] ${
-          language === 'ja'
-            ? 'bg-royal-500 text-white'
-            : 'text-cream-100 hover:text-royal-500 hover:bg-royal-500/10'
-        }`}
-      >
-        日本語
-      </button>
+    <div className="flex items-center gap-0">
+      {LANGS.map(({ code, label }, i) => (
+        <span key={code} className="flex items-center">
+          {i > 0 && (
+            <span className="text-white/12 mx-1.5 text-[0.55rem] select-none" aria-hidden="true">·</span>
+          )}
+          <button
+            onClick={() => setLanguage(code)}
+            className={`text-[0.6rem] tracking-[0.12em] uppercase transition-all duration-200 touch-manipulation py-1 ${
+              language === code
+                ? 'text-royal-400 font-semibold'
+                : 'text-white/28 hover:text-white/60 font-medium'
+            }`}
+          >
+            {label}
+          </button>
+        </span>
+      ))}
     </div>
   );
 }
