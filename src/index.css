@@ -836,6 +836,119 @@
     font-style: italic;
   }
 
+  /* ── PREMIER VIP HOST SERVICE — editorial service rows ──── */
+  .service-editorial-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  .service-editorial-row:hover {
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    .service-editorial-row {
+      grid-template-columns: 5rem 1fr;
+      gap: 2.5rem;
+      padding: 2.5rem 0;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .service-editorial-row {
+      padding: 3rem 0;
+      gap: 4rem;
+    }
+  }
+
+  /* Oversized numeral — sits behind content */
+  .service-numeral {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(139, 92, 246, 0.25);
+    transition: -webkit-text-stroke-color 0.3s ease;
+    user-select: none;
+  }
+
+  .service-editorial-row:hover .service-numeral {
+    -webkit-text-stroke-color: rgba(139, 92, 246, 0.5);
+  }
+
+  .service-row-content {
+    flex: 1;
+  }
+
+  /* ── EARN & REDEEM — editorial numbered rows ─────────────── */
+  .earn-redeem-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  .earn-redeem-row:hover {
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  @media (min-width: 640px) {
+    .earn-redeem-row {
+      grid-template-columns: 3.5rem 3rem 1fr;
+      gap: 2rem;
+      align-items: start;
+      padding: 2.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .earn-redeem-row {
+      grid-template-columns: 4rem 3.5rem 1fr;
+      gap: 3rem;
+      padding: 3rem 0;
+    }
+  }
+
+  .earn-numeral {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(139, 92, 246, 0.22);
+    user-select: none;
+    transition: -webkit-text-stroke-color 0.3s ease;
+  }
+
+  .earn-redeem-row:hover .earn-numeral {
+    -webkit-text-stroke-color: rgba(139, 92, 246, 0.5);
+  }
+
+  .earn-icon-wrap {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+  }
+
+  /* ── FAQ EDITORIAL ──────────────────────────────────────── */
+  .faq-editorial-item {
+    position: relative;
+  }
+
   /* Print styles */
   @media print {
     .glass-card {

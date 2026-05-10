@@ -47,7 +47,7 @@ export function HeroSection() {
           <div className="hero-info-card">
             <div className="luxury-label">Direct Access</div>
             <p className="text-cream-100/70 text-sm sm:text-base leading-relaxed mb-6">
-              Personal concierge available around the clock. Multilingual support. Discrete &amp; tailored.
+              Multilingual support in English, Mandarin, Taiwanese &amp; Japanese. Personalised &amp; discreet.
             </p>
             <div className="flex flex-col gap-3">
               <CTAButton

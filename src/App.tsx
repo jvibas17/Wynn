@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Crown, Menu, X } from 'lucide-react';
+import wynnEncoreNight from '../Assets/wynn-encore-exterior-night.jpg';
 import { AnimatedSection } from './components/AnimatedSection';
 import { CTAButton } from './components/CTAButton';
 import { LanguageSwitch } from './components/LanguageSwitch';
@@ -44,7 +45,7 @@ function App() {
       {/* Header / Hero */}
       <header className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${wynnEncoreNight})` }}></div>
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 via-transparent to-navy-950"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-royal-500/10 via-transparent to-royal-500/10"></div>
         </div>

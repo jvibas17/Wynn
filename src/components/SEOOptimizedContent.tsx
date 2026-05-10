@@ -1,136 +1,93 @@
-import { Star, Crown, MapPin, Clock, Award } from 'lucide-react';
+import { Crown } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { useLanguage } from '../contexts/LanguageContext';
+
+const SERVICE_NUMERALS = ['I', 'II', 'III', 'IV'];
 
 export function SEOOptimizedContent() {
   const { t } = useLanguage();
 
+  const services = [
+    { key: 'casinoHost', numeral: 'I' },
+    { key: 'entertainment', numeral: 'II' },
+    { key: 'dining', numeral: 'III' },
+    { key: 'accommodations', numeral: 'IV' },
+  ];
+
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-navy-950/98 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-royal-500/20 via-transparent to-royal-500/20"></div>
+    <section className="py-16 sm:py-20 md:py-28 bg-navy-950/98 relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl" />
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative">
-        
-        {/* Hero Content for SEO */}
+
+        {/* Header block — left-aligned editorial, not centered */}
         <AnimatedSection>
-          <div className="max-w-6xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
-            <div className="inline-flex items-center gap-3 mb-6 sm:mb-8">
-              <Crown className="h-8 w-8 sm:h-10 sm:w-10 text-royal-500" />
-              <span className="text-royal-400 text-lg sm:text-xl font-semibold uppercase tracking-wider">
-                {t('seo.badge')}
-              </span>
-              <Crown className="h-8 w-8 sm:h-10 sm:w-10 text-royal-500" />
+          <div className="max-w-3xl mb-16 sm:mb-20 lg:mb-28">
+            <div className="flex items-center gap-4 mb-6">
+              <Crown className="h-6 w-6 text-royal-500 flex-shrink-0" />
+              <div className="luxury-label">{t('seo.badge')}</div>
             </div>
-            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 sm:mb-8 leading-tight">
+            <h2 className="heading-display text-white mb-6">
               {t('seo.title')}
-            </h1>
-            
-            <p className="text-lg sm:text-xl md:text-2xl text-cream-100 leading-relaxed max-w-4xl mx-auto mb-8 sm:mb-12">
+            </h2>
+            <div className="ornament-divider w-48 mb-6"><span /></div>
+            <p className="serif-italic text-cream-100/70 text-lg sm:text-xl md:text-2xl leading-relaxed">
               {t('seo.subtitle')}
             </p>
+          </div>
+        </AnimatedSection>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-12 text-cream-200">
-              <div className="flex items-center gap-2">
-                <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                <span className="text-sm sm:text-base font-medium">{t('seo.trust.rating')}</span>
+        {/* Services — staggered editorial rows, not a symmetric card grid */}
+        <div className="relative">
+          {services.map(({ key, numeral }, i) => (
+            <AnimatedSection key={key}>
+              <div
+                className={`
+                  service-editorial-row group
+                  ${i % 2 === 0 ? 'lg:ml-0 lg:mr-24' : 'lg:ml-24 lg:mr-0'}
+                `}
+              >
+                {/* Roman numeral — oversized background flourish */}
+                <div className="service-numeral" aria-hidden="true">{numeral}</div>
+
+                {/* Content */}
+                <div className="service-row-content">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white mb-3 group-hover:text-royal-400 transition-colors duration-300">
+                    {t(`seo.services.${key}.title`)}
+                  </h3>
+                  <p className="text-cream-100/70 text-base sm:text-lg leading-relaxed max-w-xl">
+                    {t(`seo.services.${key}.description`)}
+                  </p>
+                </div>
+
+                {/* Thin accent rule on hover */}
+                <div className="absolute left-0 bottom-0 h-px w-0 bg-gradient-to-r from-royal-500/60 to-transparent group-hover:w-full transition-all duration-500" />
               </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-royal-400" />
-                <span className="text-sm sm:text-base font-medium">{t('seo.trust.reviews')}</span>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Why Choose — full-width editorial text block */}
+        <AnimatedSection>
+          <div className="mt-20 lg:mt-28 border-t border-royal-500/15 pt-16 lg:pt-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start">
+              <div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-white mb-0 leading-tight">
+                  {t('seo.whyChoose.title')}
+                </h2>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-accent-400" />
-                <span className="text-sm sm:text-base font-medium">{t('seo.trust.available')}</span>
+              <div className="space-y-5 text-cream-100/70 text-base sm:text-lg leading-relaxed">
+                <p>{t('seo.whyChoose.content.paragraph1')}</p>
+                <p>{t('seo.whyChoose.content.paragraph2')}</p>
+                <p>{t('seo.whyChoose.content.paragraph3')}</p>
               </div>
             </div>
           </div>
         </AnimatedSection>
-
-        {/* Key Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20 max-w-5xl mx-auto">
-          <AnimatedSection>
-            <div className="glass-card p-6 sm:p-8 lg:p-10 rounded-xl text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-royal-500/20 rounded-full flex items-center justify-center">
-                <Star className="h-8 w-8 sm:h-10 sm:w-10 text-royal-500" />
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6">
-                {t('seo.services.casinoHost.title')}
-              </h3>
-              <p className="text-cream-100 text-base sm:text-lg leading-relaxed">
-                {t('seo.services.casinoHost.description')}
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="glass-card p-6 sm:p-8 lg:p-10 rounded-xl text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-yellow-500/20 rounded-full flex items-center justify-center">
-                <Award className="h-8 w-8 sm:h-10 sm:w-10 text-yellow-400" />
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6">
-                {t('seo.services.entertainment.title')}
-              </h3>
-              <p className="text-cream-100 text-base sm:text-lg leading-relaxed">
-                {t('seo.services.entertainment.description')}
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="glass-card p-6 sm:p-8 lg:p-10 rounded-xl text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-accent-500/20 rounded-full flex items-center justify-center">
-                <Crown className="h-8 w-8 sm:h-10 sm:w-10 text-accent-400" />
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6">
-                {t('seo.services.dining.title')}
-              </h3>
-              <p className="text-cream-100 text-base sm:text-lg leading-relaxed">
-                {t('seo.services.dining.description')}
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="glass-card p-6 sm:p-8 lg:p-10 rounded-xl text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-green-500/20 rounded-full flex items-center justify-center">
-                <MapPin className="h-8 w-8 sm:h-10 sm:w-10 text-green-400" />
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white mb-4 sm:mb-6">
-                {t('seo.services.accommodations.title')}
-              </h3>
-              <p className="text-cream-100 text-base sm:text-lg leading-relaxed">
-                {t('seo.services.accommodations.description')}
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-
-        {/* Why Choose Section */}
-        <div className="max-w-4xl mx-auto">
-          <AnimatedSection>
-            <div className="glass-card p-6 sm:p-8 lg:p-10 rounded-xl text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-6 sm:mb-8">
-                {t('seo.whyChoose.title')}
-              </h2>
-              <div className="space-y-4 sm:space-y-6 text-cream-100 text-base sm:text-lg leading-relaxed">
-                <p>
-                  {t('seo.whyChoose.content.paragraph1')}
-                </p>
-                <p>
-                  {t('seo.whyChoose.content.paragraph2')}
-                </p>
-                <p>
-                  {t('seo.whyChoose.content.paragraph3')}
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
 
       </div>
     </section>
