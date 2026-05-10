@@ -6,14 +6,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { tierBenefits } from '../data/tierBenefits';
 
 interface EarnRedeemRowProps {
-  index: number;
   numeral: string;
   icon: React.ReactNode;
   title: string;
   description: React.ReactNode;
 }
 
-function EarnRedeemRow({ index, numeral, icon, title, description }: EarnRedeemRowProps) {
+function EarnRedeemRow({ numeral, icon, title, description }: EarnRedeemRowProps) {
   return (
     <div className="earn-redeem-row group">
       {/* Large numeral — background decorative */}
@@ -100,7 +99,6 @@ export function ServicesSection() {
         <div className="space-y-0 mb-16 lg:mb-24">
           <AnimatedSection>
             <EarnRedeemRow
-              index={0}
               numeral="01"
               icon={<CreditCard className="h-7 w-7 lg:h-8 lg:w-8 text-royal-500" />}
               title={t('services.earnRedeem.tierCredits.title')}
@@ -120,7 +118,6 @@ export function ServicesSection() {
 
           <AnimatedSection>
             <EarnRedeemRow
-              index={1}
               numeral="02"
               icon={<Coins className="h-7 w-7 lg:h-8 lg:w-8 text-royal-500" />}
               title={t('services.earnRedeem.freeCredit.title')}
@@ -145,7 +142,6 @@ export function ServicesSection() {
 
           <AnimatedSection>
             <EarnRedeemRow
-              index={2}
               numeral="03"
               icon={<Gift className="h-7 w-7 lg:h-8 lg:w-8 text-royal-500" />}
               title={t('services.earnRedeem.compDollars.title')}

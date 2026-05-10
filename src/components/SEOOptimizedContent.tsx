@@ -2,8 +2,6 @@ import { Crown } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const SERVICE_NUMERALS = ['I', 'II', 'III', 'IV'];
-
 export function SEOOptimizedContent() {
   const { t } = useLanguage();
 
