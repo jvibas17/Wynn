@@ -44,7 +44,7 @@ function App() {
       {/* Header / Hero */}
       <header className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url(${wynnEncoreNight})` }}></div>
+          <img src={wynnEncoreNight} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-contain object-center opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 via-transparent to-navy-950"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-royal-500/10 via-transparent to-royal-500/10"></div>
         </div>
