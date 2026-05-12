@@ -1,55 +1,16 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://vegasviphost.net/sitemap.xml
 
-# Important SEO pages
-Allow: /wynn-vip-host-services
-Allow: /vegas-vip-bottle-service
-Allow: /las-vegas-casino-host
-Allow: /vegas-nightclub-vip-access
-Allow: /bachelor-party-vip-vegas
-Allow: /private-event-vip-hosting
-Allow: /faq
-Allow: /contact
-
-# Language-specific paths
-Allow: /zh/
-Allow: /ja/
-Allow: /zh-tw/
-
-# Blog content
-Allow: /blog/
-
-# Location pages
-Allow: /wynn-las-vegas
-Allow: /las-vegas-strip-vip
-
-# Event pages
-Allow: /new-years-eve-vip-vegas
-Allow: /march-madness-vegas-vip
-Allow: /summer-pool-party-vip
-
-# Optimize crawling
-Crawl-delay: 1
-
-# Prevent duplicate content
-Disallow: /*?*
-Disallow: /*?
-Disallow: */amp/
-Disallow: */print/
-Disallow: /search
-Disallow: /admin/
-Disallow: /private/
-
-# Block sensitive areas
-Disallow: /api/
-Disallow: /*.json$
-Disallow: /*.xml$
-
-# SEO optimization
+# Standard crawlers
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -68,19 +29,14 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: Pinterestbot
-Allow: /
-
-User-agent: InstagramBot
-Allow: /
-
-# Block aggressive crawlers and scrapers
+# SEO tools — allowed for rank tracking
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
 
+# Block truly aggressive scrapers
 User-agent: DotBot
 Disallow: /
 
@@ -89,20 +45,3 @@ Disallow: /
 
 User-agent: BLEXBot
 Disallow: /
-
-User-agent: SeznamBot
-Disallow: /
-
-User-agent: YandexBot
-Crawl-delay: 2
-
-# Mobile optimization
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-# Rich snippets and structured data
-User-agent: Google-InspectionTool
-Allow: /
