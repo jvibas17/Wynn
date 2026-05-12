@@ -60,32 +60,33 @@ export function LeadCaptureForm() {
         throw new Error(`EmailJS returned status ${adminResponse.status}`);
       }
 
-      console.log('=== SENDING SINGLE AUTO-REPLY ===');
-      const guestTemplateParams = {
-        guest_name: formData.name,
-        to_name: formData.name,
-        guest_email: formData.email,
-        from_name: 'Wynn VIP Services Team',
-        reply_to: 'lovepicaso888@gmail.com',
-        to_email: formData.email
-      };
-      console.log('Guest template params:', guestTemplateParams);
-
-      const autoReplyResponse = await emailjs.send(
-        'service_7p441ia',
-        'template_w1f93hz',
-        guestTemplateParams,
-        'CoRTPrMWNM5iX2ws4'
-      );
-      console.log('Auto-reply response:', autoReplyResponse);
-      console.log('=== ALL EMAILS SENT SUCCESSFULLY ===');
-
+      // Admin email succeeded — mark success immediately
       setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: ''
-      });
+      setFormData({ name: '', email: '', phone: '' });
+
+      // Auto-reply is best-effort; failures don't affect the success state
+      try {
+        console.log('=== SENDING SINGLE AUTO-REPLY ===');
+        const guestTemplateParams = {
+          guest_name: formData.name,
+          to_name: formData.name,
+          guest_email: formData.email,
+          from_name: 'Wynn VIP Services Team',
+          reply_to: 'lovepicaso888@gmail.com',
+          to_email: formData.email
+        };
+        const autoReplyResponse = await emailjs.send(
+          'service_7p441ia',
+          'template_w1f93hz',
+          guestTemplateParams,
+          'CoRTPrMWNM5iX2ws4'
+        );
+        console.log('Auto-reply response:', autoReplyResponse);
+      } catch (autoReplyError) {
+        console.warn('Auto-reply failed (non-critical):', autoReplyError);
+      }
+
+      console.log('=== ALL EMAILS SENT SUCCESSFULLY ===');
     } catch (error) {
       console.error('Error sending email:', error);
       console.log('=== EMAIL SENDING FAILED ===');
