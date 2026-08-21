@@ -1,4 +1,5 @@
 import { Crown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AnimatedSection } from './AnimatedSection';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -94,24 +95,24 @@ export function SEOOptimizedContent() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
               {[
                 {
-                  href: '/wynn-rewards-guide',
+                  to: '/wynn-rewards-guide',
                   title: 'Wynn Rewards Tiers Explained',
                   desc: 'Red, Platinum & Black — what each tier means and how to maximize your benefits.',
                 },
                 {
-                  href: '/how-to-get-comps-at-wynn-las-vegas',
+                  to: '/how-to-get-comps-at-wynn-las-vegas',
                   title: 'How to Get Comps at Wynn',
                   desc: 'The insider guide to casino comps — from a real Wynn VIP host.',
                 },
                 {
-                  href: '/multilingual-vip-host-las-vegas',
+                  to: '/multilingual-vip-host-las-vegas',
                   title: 'Multilingual VIP Hosting',
                   desc: 'English, Mandarin, Taiwanese & Japanese VIP host services at Wynn.',
                 },
-              ].map(({ href, title, desc }) => (
-                <a
-                  key={href}
-                  href={href}
+              ].map(({ to, title, desc }) => (
+                <Link
+                  key={to}
+                  to={to}
                   className="group block border border-royal-500/15 hover:border-royal-500/40 p-5 lg:p-6 transition-all duration-300 hover:bg-royal-500/5"
                 >
                   <h3 className="font-serif font-semibold text-white text-base lg:text-lg mb-2 group-hover:text-royal-300 transition-colors leading-snug">
@@ -121,7 +122,7 @@ export function SEOOptimizedContent() {
                   <span className="text-[0.6rem] tracking-[0.18em] uppercase text-royal-400/50 group-hover:text-royal-400 transition-colors">
                     Read guide →
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
