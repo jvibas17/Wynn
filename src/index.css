@@ -962,6 +962,28 @@
     position: relative;
   }
 
+  /* ── BLOG PROSE ──────────────────────────────────────────── */
+  .prose-wynn ul {
+    @apply list-none space-y-2 my-4;
+  }
+
+  .prose-wynn ul li {
+    @apply pl-5 relative text-cream-100/75;
+  }
+
+  .prose-wynn ul li::before {
+    content: '✦';
+    @apply absolute left-0 text-royal-500/40 text-[0.5rem] top-[0.4em];
+  }
+
+  .prose-wynn strong {
+    @apply text-cream-100 font-semibold;
+  }
+
+  .prose-wynn em {
+    @apply font-serif italic text-cream-200/80;
+  }
+
   /* Print styles */
   @media print {
     .glass-card {

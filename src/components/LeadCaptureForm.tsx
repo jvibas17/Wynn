@@ -21,24 +21,14 @@ export function LeadCaptureForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Prevent multiple submissions
-    if (isSubmitting) {
-      console.log('=== ALREADY SUBMITTING, IGNORING ===');
-      return;
-    }
-    
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    console.log('=== FORM SUBMISSION START ===');
-    console.log('Form data:', { name: formData.name, email: formData.email, phone: formData.phone });
-
     try {
-      if (!form.current) {
-        throw new Error('Form reference is not available');
-      }
+      if (!form.current) throw new Error('Form ref missing');
 
-      console.log('=== SENDING ADMIN EMAIL TO WINNIE ===');
       const adminTemplateParams = {
         to_name: 'Winnie Lee',
         to_email: 'lovepicaso888@gmail.com',
@@ -48,25 +38,18 @@ export function LeadCaptureForm() {
       };
       console.log('Admin template params:', adminTemplateParams);
 
-      const adminResponse = await emailjs.send(
+      await emailjs.send(
         'service_7p441ia',
         'template_vitqt4j',
         adminTemplateParams,
         'CoRTPrMWNM5iX2ws4'
       );
-      console.log('Admin email response:', adminResponse);
-
-      if (adminResponse.status !== 200) {
-        throw new Error(`EmailJS returned status ${adminResponse.status}`);
-      }
 
       // Admin email succeeded — mark success immediately
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '' });
 
-      // Auto-reply is best-effort; failures don't affect the success state
       try {
-        console.log('=== SENDING SINGLE AUTO-REPLY ===');
         const guestTemplateParams = {
           guest_name: formData.name,
           to_name: formData.name,
@@ -75,21 +58,17 @@ export function LeadCaptureForm() {
           reply_to: 'lovepicaso888@gmail.com',
           to_email: formData.email
         };
-        const autoReplyResponse = await emailjs.send(
+        await emailjs.send(
           'service_7p441ia',
           'template_w1f93hz',
           guestTemplateParams,
           'CoRTPrMWNM5iX2ws4'
         );
-        console.log('Auto-reply response:', autoReplyResponse);
-      } catch (autoReplyError) {
-        console.warn('Auto-reply failed (non-critical):', autoReplyError);
+      } catch (_) {
+        // auto-reply failure is non-critical
       }
-
-      console.log('=== ALL EMAILS SENT SUCCESSFULLY ===');
     } catch (error) {
-      console.error('Error sending email:', error);
-      console.log('=== EMAIL SENDING FAILED ===');
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
