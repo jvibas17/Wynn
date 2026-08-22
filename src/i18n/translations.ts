@@ -287,6 +287,7 @@ export const translations = {
         courtesyCheckin: 'Courtesy Check-In at Tower Suites',
         valetService: 'Complimentary valet service',
         privateJetArrangements: 'Private jet & limousine arrangements',
+        limousineArrangements: 'Limousine arrangements',
         instantLineSkipping: 'Immediate priority access & line-skipping',
         crossPropertyPrivileges: 'Cross-property privileges (Wynn Resorts network)'
       },
