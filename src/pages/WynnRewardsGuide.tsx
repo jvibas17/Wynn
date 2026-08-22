@@ -3,16 +3,16 @@ import { BlogLayout } from './BlogLayout';
 
 export function WynnRewardsGuide() {
   useEffect(() => {
-    document.title = 'Wynn Rewards Tiers Explained (2026) | Red, Platinum & Black Benefits';
+    document.title = "Wynn Rewards Tiers Explained (2026) | Red, Platinum, Black & Chairman's Club";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', 'Complete guide to Wynn Rewards tiers in 2026. Learn how Red, Platinum, and Black tiers work, how to earn Tier Credits, COMP DOLLARS, and FREE CREDIT — from a real Wynn VIP host.');
+    if (meta) meta.setAttribute('content', "Complete guide to Wynn Rewards tiers in 2026. Learn how Red, Platinum, Black, and the invite-only Chairman's Club work — from a real Wynn VIP host.");
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <BlogLayout
-      title="Wynn Rewards Tiers Explained: Red, Platinum & Black (2026 Guide)"
-      description="Everything you need to know about Wynn Rewards — how the three tiers work, how to earn credits, and how to maximize your comps. Written by Winnie Lee, a VIP host at Wynn Las Vegas."
+      title="Wynn Rewards Tiers Explained: Red, Platinum, Black & Chairman's Club (2026)"
+      description="Everything you need to know about Wynn Rewards — how all four tiers work, how to earn credits, and how to maximize your comps. Written by Winnie Lee, a VIP host at Wynn Las Vegas."
       readTime="8 min read"
     >
       <Section>
@@ -31,7 +31,7 @@ export function WynnRewardsGuide() {
         <p>The key insight most guests miss: <em>Tier Credits and FREE CREDIT/COMP DOLLARS are earned separately</em>. Playing slots earns all three simultaneously. Table games earn Tier Credits and COMP DOLLARS, but FREE CREDIT rates differ.</p>
       </Section>
 
-      <H2>The Three Wynn Rewards Tiers</H2>
+      <H2>The Four Wynn Rewards Tiers</H2>
 
       <H3>Red Tier — The Entry Level</H3>
       <Section>
@@ -53,19 +53,37 @@ export function WynnRewardsGuide() {
         <p>Most regular Vegas visitors who stay 2–4 nights and play consistently will target Platinum as their annual goal. The jump in benefits from Red to Platinum is the most dramatic in the program.</p>
       </Section>
 
-      <H3>Black Tier — Chairman's Level</H3>
+      <H3>Black Tier — Premium Status</H3>
       <Section>
-        <p>Black tier is Wynn's highest level — equivalent to what other programs call "Chairman" or "Diamond" status. Black card holders receive the full VIP treatment: priority access to everything, the highest comp rates, and a dedicated senior host relationship.</p>
+        <p>Black tier is Wynn's highest publicly-available tier. Black card holders receive the full VIP treatment: priority access to everything, the highest publicly-advertised comp rates, and a dedicated senior host relationship.</p>
         <p>Benefits at Black tier typically include:</p>
         <ul>
-          <li>Highest FREE CREDIT and COMP DOLLAR earn rates</li>
+          <li>Highest FREE CREDIT and COMP DOLLAR earn rates (among standard tiers)</li>
           <li>Complimentary luxury suites and villa access</li>
           <li>Priority access to all Wynn restaurants, shows, and amenities</li>
           <li>Dedicated concierge for travel arrangements</li>
-          <li>Invitations to exclusive Chairman-level events and private experiences</li>
+          <li>Invitations to exclusive Black-tier events and private experiences</li>
           <li>Access to high-limit gaming salons</li>
         </ul>
         <TipBox>Black tier guests typically have a dedicated senior VIP host. If you're targeting Black status, contact a host before your trip — a strong host relationship can make a meaningful difference in the discretionary benefits you receive.</TipBox>
+      </Section>
+
+      <H3Gold id="chairmans-club">Chairman's Club — By Invitation Only</H3Gold>
+      <Section>
+        <p>Above Black tier sits the <strong>Chairman's Club</strong> — Wynn's ultra-exclusive, invite-only tier. There is no published credit threshold. Membership is extended personally by Wynn leadership to guests whose relationship and play history meet an undisclosed standard of loyalty and volume.</p>
+        <p>If you're at this level, you already know what it means. If you're not, the path runs through a sustained Black-tier relationship with a dedicated VIP host who can advocate on your behalf.</p>
+        <p>Chairman's Club benefits include everything at Black tier, plus:</p>
+        <ul>
+          <li><strong>Private ultra-high-limit gaming salons</strong> — reserved exclusively for Chairman-level guests</li>
+          <li><strong>Dedicated Executive VIP Host</strong> — a single point of contact with direct access to Wynn leadership</li>
+          <li><strong>Maximum bonus slot points</strong> — the highest earn rate in the program</li>
+          <li><strong>Private jet &amp; limousine arrangements</strong> — coordinated by your host, end-to-end</li>
+          <li><strong>Immediate priority access &amp; line-skipping</strong> at every Wynn venue</li>
+          <li><strong>Cross-property privileges</strong> across the Wynn Resorts network</li>
+          <li><strong>Bespoke birthday, dining &amp; travel credits</strong> — tailored individually, not from a fixed schedule</li>
+          <li>All annual benefits from Black tier, enhanced to a bespoke level</li>
+        </ul>
+        <TipBoxGold>The Chairman's Club is not applied for — it is offered. The best way to position yourself is through a long-term VIP host relationship, consistent play across multiple visits, and staying at Wynn or Encore. I work with Chairman-level guests and can help you build the kind of relationship that gets you noticed.</TipBoxGold>
       </Section>
 
       <H2>How to Earn Tier Credits</H2>
@@ -139,6 +157,9 @@ export function WynnRewardsGuide() {
         <FaqItem q="What's the fastest way to earn Tier Credits?">
           Slot machines offer the best Tier Credit earn rate per dollar wagered. High-denomination slots also tend to earn COMP DOLLARS faster. That said, always play the games you enjoy — the program is designed to reward consistent guests, not to optimize gambling spend.
         </FaqItem>
+        <FaqItem q="How do you get invited to the Chairman's Club?">
+          Chairman's Club membership is extended by invitation only — there is no published threshold or application process. In practice, it requires a deep, long-term relationship with Wynn: consistent high-volume play across multiple visits, stays at Wynn or Encore, and a strong relationship with a senior VIP host. The host relationship matters because hosts advocate for their guests internally. If you're at Black tier and building toward this level, contact me directly — I can help you understand where you stand and what Wynn typically looks for.
+        </FaqItem>
       </Section>
     </BlogLayout>
   );
@@ -160,10 +181,28 @@ function H3({ children }: { children: React.ReactNode }) {
   return <h3 className="font-serif text-xl sm:text-2xl font-semibold text-royal-300 mt-10 mb-3">{children}</h3>;
 }
 
+function H3Gold({ id, children }: { id?: string; children: React.ReactNode }) {
+  return (
+    <h3 id={id} className="font-serif text-xl sm:text-2xl font-semibold text-amber-300 mt-10 mb-3 flex items-center gap-3">
+      <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400/70 flex-shrink-0" />
+      {children}
+    </h3>
+  );
+}
+
 function TipBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-6 pl-4 border-l-2 border-royal-500/50 bg-royal-500/5 py-4 pr-4 rounded-r-lg">
       <p className="text-[0.6rem] tracking-[0.2em] uppercase text-royal-400/60 mb-2">Host Tip</p>
+      <p className="text-cream-100/80 text-sm sm:text-base leading-relaxed">{children}</p>
+    </div>
+  );
+}
+
+function TipBoxGold({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="my-6 pl-4 border-l-2 border-amber-400/50 bg-amber-500/5 py-4 pr-4 rounded-r-lg">
+      <p className="text-[0.6rem] tracking-[0.2em] uppercase text-amber-400/60 mb-2">Host Note</p>
       <p className="text-cream-100/80 text-sm sm:text-base leading-relaxed">{children}</p>
     </div>
   );
