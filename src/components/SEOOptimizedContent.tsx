@@ -92,34 +92,50 @@ export function SEOOptimizedContent() {
         <AnimatedSection>
           <div className="mt-16 lg:mt-20 border-t border-royal-500/10 pt-12 lg:pt-16">
             <div className="luxury-label mb-8">Further Reading</div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
               {[
                 {
                   to: '/wynn-rewards-guide',
                   title: 'Wynn Rewards Tiers Explained',
-                  desc: 'Red, Platinum & Black — what each tier means and how to maximize your benefits.',
+                  desc: 'Red, Platinum, Black & Chairman\'s Club — what each tier means and how to maximize your benefits.',
+                  accent: 'hover:border-royal-500/40 hover:bg-royal-500/5',
                 },
                 {
                   to: '/how-to-get-comps-at-wynn-las-vegas',
                   title: 'How to Get Comps at Wynn',
                   desc: 'The insider guide to casino comps — from a real Wynn VIP host.',
+                  accent: 'hover:border-royal-500/40 hover:bg-royal-500/5',
                 },
                 {
                   to: '/multilingual-vip-host-las-vegas',
                   title: 'Multilingual VIP Hosting',
                   desc: 'English, Mandarin, Taiwanese & Japanese VIP host services at Wynn.',
+                  accent: 'hover:border-royal-500/40 hover:bg-royal-500/5',
                 },
-              ].map(({ to, title, desc }) => (
+                {
+                  to: '/wynn-rewards-guide#chairmans-club',
+                  title: "Chairman's Club",
+                  desc: 'Invite-only ultra-exclusive tier. Private gaming salons, executive host & bespoke luxury at the highest level.',
+                  accent: 'hover:border-amber-400/50 hover:bg-amber-500/5',
+                  gold: true,
+                },
+              ].map(({ to, title, desc, accent, gold }) => (
                 <Link
                   key={to}
                   to={to}
-                  className="group block border border-royal-500/15 hover:border-royal-500/40 p-5 lg:p-6 transition-all duration-300 hover:bg-royal-500/5"
+                  className={`group block border p-5 lg:p-6 transition-all duration-300 ${gold ? 'border-amber-400/20' : 'border-royal-500/15'} ${accent}`}
                 >
-                  <h3 className="font-serif font-semibold text-white text-base lg:text-lg mb-2 group-hover:text-royal-300 transition-colors leading-snug">
+                  {gold && (
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="inline-block w-1 h-1 rounded-full bg-amber-400/70" />
+                      <span className="text-[0.55rem] tracking-[0.25em] uppercase text-amber-400/50 font-medium">Invite Only</span>
+                    </div>
+                  )}
+                  <h3 className={`font-serif font-semibold text-white text-base lg:text-lg mb-2 leading-snug transition-colors ${gold ? 'group-hover:text-amber-300' : 'group-hover:text-royal-300'}`}>
                     {title}
                   </h3>
                   <p className="text-cream-100/50 text-sm leading-relaxed mb-4">{desc}</p>
-                  <span className="text-[0.6rem] tracking-[0.18em] uppercase text-royal-400/50 group-hover:text-royal-400 transition-colors">
+                  <span className={`text-[0.6rem] tracking-[0.18em] uppercase transition-colors ${gold ? 'text-amber-400/40 group-hover:text-amber-400' : 'text-royal-400/50 group-hover:text-royal-400'}`}>
                     Read guide →
                   </span>
                 </Link>
