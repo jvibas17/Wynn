@@ -41,7 +41,7 @@ function EarnRedeemRow({ numeral, icon, title, description }: EarnRedeemRowProps
 
 export function ServicesSection() {
   const { t } = useLanguage();
-  const tiers = ['red', 'platinum', 'black'] as const;
+  const tiers = ['red', 'platinum', 'black', 'chairman'] as const;
 
   return (
     <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 bg-navy-950/95 aurora-glow" id="services">
@@ -65,13 +65,14 @@ export function ServicesSection() {
         </AnimatedSection>
 
         {/* Tier cards — staggered heights via offset classes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-8 sm:mb-12 lg:mb-16 xl:mb-28 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-8 sm:mb-12 lg:mb-16 xl:mb-28 items-start">
           {tiers.map((tier, i) => (
             <AnimatedSection key={tier}>
               <div className={`
                 ${i === 0 ? 'xl:mt-0' : ''}
                 ${i === 1 ? 'xl:mt-8' : ''}
                 ${i === 2 ? 'xl:mt-16' : ''}
+                ${i === 3 ? 'xl:mt-24' : ''}
               `}>
                 <RewardCard
                   tier={tier}

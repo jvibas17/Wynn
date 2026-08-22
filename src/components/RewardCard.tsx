@@ -15,7 +15,7 @@ interface TierBenefits {
 }
 
 interface RewardCardProps {
-  tier: 'red' | 'platinum' | 'black';
+  tier: 'red' | 'platinum' | 'black' | 'chairman';
   title: string;
   tierRange: string;
   benefits: TierBenefits;
@@ -51,7 +51,17 @@ const tierConfig = {
     accentHover: 'hover:text-cream-100',
     accentCheck: 'text-cream-200',
     numeral: 'III',
-    label: 'Chairman',
+    label: 'Black',
+  },
+  chairman: {
+    accentBar: 'bg-gradient-to-r from-amber-700/60 via-amber-400 to-amber-700/60',
+    accentText: 'text-amber-300',
+    accentBorder: 'border-amber-400/35',
+    accentBg: 'bg-amber-500/5',
+    accentHover: 'hover:text-amber-300',
+    accentCheck: 'text-amber-300',
+    numeral: 'IV',
+    label: "Chairman's",
   },
 };
 
@@ -145,10 +155,17 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
           {title}
         </h3>
 
-        {/* Credits range */}
-        <p className={`text-xs font-medium tracking-wider uppercase ${cfg.accentText} opacity-70`}>
-          Tier Credits: {tierRange}
-        </p>
+        {/* Credits range / invite label */}
+        {tier === 'chairman' ? (
+          <p className={`text-xs font-medium tracking-wider uppercase ${cfg.accentText} opacity-90 flex items-center gap-2`}>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400/70" />
+            {tierRange}
+          </p>
+        ) : (
+          <p className={`text-xs font-medium tracking-wider uppercase ${cfg.accentText} opacity-70`}>
+            Tier Credits: {tierRange}
+          </p>
+        )}
       </div>
 
       {/* Thin divider */}

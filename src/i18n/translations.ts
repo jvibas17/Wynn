@@ -16,7 +16,7 @@ export const translations = {
     },
     services: {
       title: 'Wynn Rewards Program',
-      subtitle: 'Experience unparalleled luxury with our exclusive three-tier rewards program designed for discerning guests.',
+      subtitle: 'Experience unparalleled luxury with our exclusive four-tier rewards program — from Red to the ultra-exclusive Chairman\'s Club.',
       earnRedeem: {
         title: 'How to Earn & Redeem',
         tierCredits: {
@@ -249,6 +249,9 @@ export const translations = {
       black: {
         title: 'Black Card Member'
       },
+      chairman: {
+        title: "Chairman's Club"
+      },
       sections: {
         gaming: 'Gaming Benefits',
         resort: 'Resort Benefits',
@@ -264,7 +267,9 @@ export const translations = {
         specialEvents: 'Invitations to select special events and tournaments',
         prioritySlotService: 'Priority slot service',
         bonusSlotPoints: 'Bonus on slot points earned for FREECREDIT',
-        personalCasinoHost: 'Personal Casino Host'
+        personalCasinoHost: 'Personal Casino Host',
+        privateSalons: 'Private ultra-high-limit gaming salons',
+        executiveHost: 'Dedicated Executive VIP Host'
       },
       resort: {
         hotelDiscounts: 'Exclusive hotel discounts (up to 30% off)',
@@ -280,7 +285,10 @@ export const translations = {
         lateCheckout: 'Complimentary late checkout',
         roomUpgrade: 'Room upgrade to Tower Suites',
         courtesyCheckin: 'Courtesy Check-In at Tower Suites',
-        valetService: 'Complimentary valet service'
+        valetService: 'Complimentary valet service',
+        privateJetArrangements: 'Private jet & limousine arrangements',
+        instantLineSkipping: 'Immediate priority access & line-skipping',
+        crossPropertyPrivileges: 'Cross-property privileges (Wynn Resorts network)'
       },
       annual: {
         cruiseDiscount: 'Discounted Holland America Line cruise for two',
@@ -290,7 +298,8 @@ export const translations = {
         birthdayDinnerCredit: 'Complimentary birthday dinner credit',
         connoisseurSeries: 'Complimentary Wynn Connoisseur Series for two guests',
         golfRound: 'Complimentary round of golf for two at Wynn Golf Club',
-        encoreBostonStay: 'Complimentary Encore Boston Harbor hotel stay'
+        encoreBostonStay: 'Complimentary Encore Boston Harbor hotel stay',
+        bespokeComps: 'Bespoke birthday, dining & travel credits'
       }
     },
     chatbot: {

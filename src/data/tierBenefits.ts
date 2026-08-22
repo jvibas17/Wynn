@@ -285,5 +285,117 @@ export const tierBenefits = {
         available: true
       }
     ]
+  },
+  chairman: {
+    tierRange: 'By Invitation Only',
+    gaming: [
+      {
+        name: 'benefits.gaming.privateSalons',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.earnRedeemSlots',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.earnCompDollars',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.specialEvents',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.prioritySlotService',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.bonusSlotPoints',
+        value: 'Maximum',
+        available: true
+      },
+      {
+        name: 'benefits.gaming.executiveHost',
+        available: true
+      }
+    ],
+    resort: [
+      {
+        name: 'benefits.resort.complimentaryStays',
+        available: true
+      },
+      {
+        name: 'benefits.resort.roomUpgrade',
+        available: true
+      },
+      {
+        name: 'benefits.resort.courtesyCheckin',
+        available: true
+      },
+      {
+        name: 'benefits.resort.valetService',
+        available: true
+      },
+      {
+        name: 'benefits.resort.nightclubEntry',
+        available: true
+      },
+      {
+        name: 'benefits.resort.lateCheckout',
+        available: true
+      },
+      {
+        name: 'benefits.resort.preferredReservations',
+        available: true
+      },
+      {
+        name: 'benefits.resort.privateJetArrangements',
+        available: true
+      },
+      {
+        name: 'benefits.resort.instantLineSkipping',
+        available: true
+      },
+      {
+        name: 'benefits.resort.crossPropertyPrivileges',
+        available: true
+      }
+    ],
+    annual: [
+      {
+        name: 'benefits.annual.complimentaryCruise',
+        available: true
+      },
+      {
+        name: 'benefits.annual.birthdayFreeCredit',
+        available: true
+      },
+      {
+        name: 'benefits.annual.spaCredit',
+        value: 'Bespoke',
+        available: true
+      },
+      {
+        name: 'benefits.annual.birthdayDinnerCredit',
+        value: 'Bespoke',
+        available: true
+      },
+      {
+        name: 'benefits.annual.connoisseurSeries',
+        available: true
+      },
+      {
+        name: 'benefits.annual.golfRound',
+        available: true
+      },
+      {
+        name: 'benefits.annual.encoreBostonStay',
+        available: true
+      },
+      {
+        name: 'benefits.annual.bespokeComps',
+        available: true
+      }
+    ]
   }
 };
