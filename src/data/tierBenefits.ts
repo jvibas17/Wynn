@@ -325,19 +325,11 @@ export const tierBenefits = {
         available: true
       },
       {
-        name: 'benefits.resort.roomUpgrade',
-        available: true
-      },
-      {
         name: 'benefits.resort.courtesyCheckin',
         available: true
       },
       {
         name: 'benefits.resort.valetService',
-        available: true
-      },
-      {
-        name: 'benefits.resort.nightclubEntry',
         available: true
       },
       {
