@@ -349,10 +349,6 @@ export const tierBenefits = {
         available: true
       },
       {
-        name: 'benefits.resort.privateJetArrangements',
-        available: true
-      },
-      {
         name: 'benefits.resort.instantLineSkipping',
         available: true
       },

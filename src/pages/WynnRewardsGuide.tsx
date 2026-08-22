@@ -77,7 +77,6 @@ export function WynnRewardsGuide() {
           <li><strong>Private ultra-high-limit gaming salons</strong> — reserved exclusively for Chairman-level guests</li>
           <li><strong>Dedicated Executive VIP Host</strong> — a single point of contact with direct access to Wynn leadership</li>
           <li><strong>Maximum bonus slot points</strong> — the highest earn rate in the program</li>
-          <li><strong>Private jet &amp; limousine arrangements</strong> — coordinated by your host, end-to-end</li>
           <li><strong>Immediate priority access &amp; line-skipping</strong> at every Wynn venue</li>
           <li><strong>Cross-property privileges</strong> across the Wynn Resorts network</li>
           <li><strong>Bespoke birthday, dining &amp; travel credits</strong> — tailored individually, not from a fixed schedule</li>
