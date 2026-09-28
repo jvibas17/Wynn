@@ -17,7 +17,7 @@ export function ContactSection() {
           <div className="editorial-header mb-16 lg:mb-24">
             <div className="editorial-number">03</div>
             <div>
-              <div className="luxury-label">Connect</div>
+              <div className="luxury-label">{t('ui.labels.connect')}</div>
               <h2 className="heading-display text-white mb-6">
                 {t('contact.title')}
               </h2>

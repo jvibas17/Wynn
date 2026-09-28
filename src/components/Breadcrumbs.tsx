@@ -18,7 +18,7 @@ export function Breadcrumbs() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-40"
-      aria-label="Breadcrumb navigation"
+      aria-label={t('ui.breadcrumbAria')}
     >
       {/* Thin royal purple top line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-royal-500/50 to-transparent" />
@@ -26,7 +26,7 @@ export function Breadcrumbs() {
       {/* Breadcrumb bar */}
       <div className="bg-navy-950/90 backdrop-blur-md border-b border-royal-500/[0.08]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ol className="flex items-center py-1.5 gap-0" aria-label="breadcrumb">
+          <ol className="flex items-center py-1.5 gap-0" aria-label={t('ui.breadcrumbAria')}>
             {breadcrumbs.map((item, index) => (
               <li key={item.href} className="flex items-center">
 
@@ -62,7 +62,7 @@ export function Breadcrumbs() {
             <li className="ml-auto hidden sm:block" aria-hidden="true">
               <div className="flex items-center gap-2 text-[0.55rem] tracking-[0.25em] uppercase text-royal-500/25 font-medium select-none">
                 <span className="w-6 h-px bg-royal-500/20" />
-                <span>Vegas VIP Host</span>
+                <span>{t('ui.breadcrumbBrand')}</span>
               </div>
             </li>
           </ol>

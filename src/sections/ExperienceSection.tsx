@@ -29,7 +29,7 @@ export function ExperienceSection() {
           {/* LEFT — text content */}
           <AnimatedSection>
             <div className="editorial-number mb-2">02</div>
-            <div className="luxury-label">The Experience</div>
+            <div className="luxury-label">{t('ui.labels.experience')}</div>
             <h2 className="heading-display text-white mb-4">
               {t('experience.title')}
             </h2>
@@ -61,7 +61,7 @@ export function ExperienceSection() {
               <div className="relative rounded-lg overflow-hidden shadow-2xl">
                 <img
                   src={wynnExterior}
-                  alt="Wynn Las Vegas Luxury Hotel Exterior - VIP Experience"
+                  alt={t('ui.experienceImageAlt')}
                   className="w-full h-auto max-h-96 sm:max-h-none object-cover transform hover:scale-105 transition-transform duration-700"
                 />
                 {/* Dark gradient overlay on image bottom */}

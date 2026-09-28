@@ -303,6 +303,96 @@ export const translations = {
         bespokeComps: 'Bespoke birthday, dining & travel credits'
       }
     },
+    ui: {
+      meta: {
+        title: 'Wynn VIP Host Las Vegas | Winnie Lee — Elite Concierge',
+        description: "Book Winnie Lee, Wynn's elite multilingual VIP host. Casino comps, bottle service, nightclub access & 24/7 concierge in Las Vegas. Contact her directly."
+      },
+      logoCaption: 'Rewards',
+      brandName: 'Wynn Rewards',
+      scrollTopAria: 'Wynn Rewards - Scroll to top',
+      toggleMenuAria: 'Toggle mobile menu',
+      navAria: {
+        services: 'VIP Services',
+        experience: 'VIP Experience',
+        faq: 'Frequently Asked Questions',
+        contact: 'Contact Winnie Lee'
+      },
+      contactCtaAria: 'Contact Winnie Lee for VIP Services',
+      learnMoreAria: 'Learn more about VIP services',
+      marquee: ['Discreet', 'Bespoke', 'Multilingual', 'Wynn Rewards', 'VIP Access', 'Exclusive'],
+      hero: {
+        rail: 'Wynn Las Vegas — VIP Concierge — Est. MMV',
+        annoDomini: 'Anno Domini · Vegas',
+        invitation: 'An Exclusive Invitation',
+        directAccess: 'Direct Access',
+        languages: 'Multilingual support in English, Mandarin, Taiwanese & Japanese. Personalised & discreet.'
+      },
+      labels: {
+        host: 'Your Host',
+        rewards: 'Rewards & Benefits',
+        howItWorks: 'How it Works',
+        experience: 'The Experience',
+        knowledge: 'Knowledge',
+        connect: 'Connect',
+        furtherReading: 'Further Reading'
+      },
+      host: {
+        years: 'Years of Excellence',
+        rail: 'Wynn Las Vegas · VIP Host',
+        imageAlt: 'Las Vegas Strip at Night — Wynn VIP Host'
+      },
+      experienceImageAlt: 'Wynn Las Vegas Luxury Hotel Exterior - VIP Experience',
+      breadcrumbBrand: 'Vegas VIP Host',
+      breadcrumbAria: 'Breadcrumb navigation',
+      tiers: {
+        labels: {
+          red: 'Entry Tier',
+          platinum: 'Elite Tier',
+          black: 'Black Tier',
+          chairman: 'Chairman\'s Tier'
+        },
+        credits: 'Tier Credits:',
+        byInvitation: 'By Invitation Only',
+        maximum: 'Maximum',
+        bespoke: 'Bespoke'
+      },
+      guides: {
+        inviteOnly: 'Invite Only',
+        readGuide: 'Read guide →',
+        rewards: {
+          title: 'Wynn Rewards Tiers Explained',
+          desc: 'Red, Platinum, Black & Chairman\'s Club — what each tier means and how to maximize your benefits.'
+        },
+        comps: {
+          title: 'How to Get Comps at Wynn',
+          desc: 'The insider guide to casino comps — from a real Wynn VIP host.'
+        },
+        multilingual: {
+          title: 'Multilingual VIP Hosting',
+          desc: 'English, Mandarin, Taiwanese & Japanese VIP host services at Wynn.'
+        },
+        chairman: {
+          title: 'Chairman\'s Club',
+          desc: 'Invite-only ultra-exclusive tier. Private gaming salons, executive host & bespoke luxury at the highest level.'
+        }
+      },
+      blog: {
+        contact: 'Contact Winnie Lee',
+        back: '← Back to Vegas VIP Host',
+        badge: 'Wynn VIP Guide',
+        published: 'May 2026',
+        byline: 'Winnie Lee · Wynn VIP Host',
+        ctaLabel: 'Ready to experience it?',
+        ctaTitle: 'Contact Winnie Lee Directly',
+        ctaText: 'Winnie Lee is fluent in English, Mandarin, Taiwanese, and Japanese. Reach out to start planning your VIP Las Vegas experience.',
+        ctaButton: 'Begin Your VIP Journey →',
+        copyright: '© 2026 Wynn Rewards VIP Services · Winnie Lee',
+        backHome: '← Back to Home',
+        hostTip: 'Host Tip',
+        hostNote: 'Host Note'
+      }
+    },
     chatbot: {
       name: 'Cena',
       title: 'VIP Concierge Assistant',
@@ -573,6 +663,9 @@ export const translations = {
       black: {
         title: '黑卡会员'
       },
+      chairman: {
+        title: '主席俱乐部'
+      },
       sections: {
         gaming: '游戏福利',
         resort: '度假村福利', 
@@ -588,7 +681,9 @@ export const translations = {
         specialEvents: '特选特殊活动和锦标赛邀请',
         prioritySlotService: '优先老虎机服务',
         bonusSlotPoints: '免费积分老虎机积分奖励',
-        personalCasinoHost: '个人赌场主管'
+        personalCasinoHost: '个人赌场主管',
+        privateSalons: '私人超高额博彩贵宾厅',
+        executiveHost: '专属行政VIP主管'
       },
       resort: {
         hotelDiscounts: '独家酒店折扣（最高30%优惠）',
@@ -604,7 +699,11 @@ export const translations = {
         lateCheckout: '免费延迟退房',
         roomUpgrade: '升级至塔楼套房',
         courtesyCheckin: '塔楼套房礼宾办理入住',
-        valetService: '免费代客泊车服务'
+        valetService: '免费代客泊车服务',
+        privateJetArrangements: '私人飞机及豪华轿车安排',
+        limousineArrangements: '豪华轿车安排',
+        instantLineSkipping: '即时优先通道及免排队',
+        crossPropertyPrivileges: '跨物业特权（永利度假村网络）'
       },
       annual: {
         cruiseDiscount: '两人荷美邮轮线路折扣',
@@ -614,7 +713,98 @@ export const translations = {
         birthdayDinnerCredit: '免费生日晚餐积分',
         connoisseurSeries: '两位客人免费永利鉴赏家系列',
         golfRound: '永利高尔夫俱乐部两人免费高尔夫',
-        encoreBostonStay: '免费安可波士顿港酒店住宿'
+        encoreBostonStay: '免费安可波士顿港酒店住宿',
+        bespokeComps: '定制生日、餐饮及旅行额度'
+      }
+    },
+    ui: {
+      meta: {
+        title: '拉斯维加斯永利VIP主管 | 李慧敏 — 精英礼宾服务',
+        description: '预约李慧敏 — 永利精英多语言VIP主管。赌场免费招待、酒水服务、夜店通道及拉斯维加斯24小时礼宾服务。欢迎直接联系。'
+      },
+      logoCaption: '奖励',
+      brandName: '永利奖励',
+      scrollTopAria: '永利奖励 - 返回顶部',
+      toggleMenuAria: '打开或关闭菜单',
+      navAria: {
+        services: 'VIP服务',
+        experience: 'VIP体验',
+        faq: '常见问题',
+        contact: '联系李慧敏'
+      },
+      contactCtaAria: '联系李慧敏获取VIP服务',
+      learnMoreAria: '了解更多VIP服务',
+      marquee: ['私密周到', '量身定制', '多语言服务', '永利奖励', 'VIP通道', '尊享专属'],
+      hero: {
+        rail: '拉斯维加斯永利 — VIP礼宾 — 始于2005',
+        annoDomini: '二〇二五 · 拉斯维加斯',
+        invitation: '专属邀约',
+        directAccess: '直接联系',
+        languages: '提供英语、普通话、台语和日语多语言服务。个性化且私密周到。'
+      },
+      labels: {
+        host: '您的主管',
+        rewards: '奖励与福利',
+        howItWorks: '运作方式',
+        experience: '尊享体验',
+        knowledge: '知识问答',
+        connect: '联系方式',
+        furtherReading: '延伸阅读'
+      },
+      host: {
+        years: '年卓越服务',
+        rail: '拉斯维加斯永利 · VIP主管',
+        imageAlt: '拉斯维加斯大道夜景 — 永利VIP主管'
+      },
+      experienceImageAlt: '拉斯维加斯永利豪华酒店外观 - VIP体验',
+      breadcrumbBrand: '拉斯维加斯VIP主管',
+      breadcrumbAria: '面包屑导航',
+      tiers: {
+        labels: {
+          red: '入门级别',
+          platinum: '精英级别',
+          black: '黑卡级别',
+          chairman: '主席级别'
+        },
+        credits: '级别积分：',
+        byInvitation: '仅限受邀',
+        maximum: '最高',
+        bespoke: '专属定制'
+      },
+      guides: {
+        inviteOnly: '仅限受邀',
+        readGuide: '阅读指南 →',
+        rewards: {
+          title: '永利奖励等级详解',
+          desc: '红卡、白金卡、黑卡与主席俱乐部 — 各等级的含义以及如何充分利用您的福利。'
+        },
+        comps: {
+          title: '如何在永利获得免费招待',
+          desc: '赌场免费招待内行指南 — 出自真正的永利VIP主管。'
+        },
+        multilingual: {
+          title: '多语言VIP主管服务',
+          desc: '永利提供英语、普通话、台语和日语VIP主管服务。'
+        },
+        chairman: {
+          title: '主席俱乐部',
+          desc: '仅限受邀的顶级专属等级。私人博彩贵宾厅、行政主管及最高规格的定制奢华体验。'
+        }
+      },
+      blog: {
+        contact: '联系李慧敏',
+        back: '← 返回拉斯维加斯VIP主管',
+        badge: '永利VIP指南',
+        published: '2026年5月',
+        byline: '李慧敏 · 永利VIP主管',
+        ctaLabel: '准备好亲身体验了吗？',
+        ctaTitle: '直接联系李慧敏',
+        ctaText: '李慧敏精通英语、普通话、台语和日语。立即联系，开始规划您的拉斯维加斯VIP之旅。',
+        ctaButton: '开启您的VIP之旅 →',
+        copyright: '© 2026 永利奖励VIP服务 · 李慧敏',
+        backHome: '← 返回首页',
+        hostTip: '主管建议',
+        hostNote: '主管提示'
       }
     },
     chatbot: {
@@ -887,6 +1077,9 @@ export const translations = {
       black: {
         title: '黑卡會員'
       },
+      chairman: {
+        title: '主席俱樂部'
+      },
       sections: {
         gaming: '遊戲福利',
         resort: '度假村福利',
@@ -902,7 +1095,9 @@ export const translations = {
         specialEvents: '特選特殊活動和錦標賽邀請',
         prioritySlotService: '優先老虎機服務',
         bonusSlotPoints: '免費積分老虎機積分獎勵',
-        personalCasinoHost: '個人賭場主管'
+        personalCasinoHost: '個人賭場主管',
+        privateSalons: '私人超高額博彩貴賓廳',
+        executiveHost: '專屬行政VIP主管'
       },
       resort: {
         hotelDiscounts: '獨家酒店折扣（最高30%優惠）',
@@ -918,7 +1113,11 @@ export const translations = {
         lateCheckout: '免費延遲退房',
         roomUpgrade: '升級至塔樓套房',
         courtesyCheckin: '塔樓套房禮賓辦理入住',
-        valetService: '免費代客泊車服務'
+        valetService: '免費代客泊車服務',
+        privateJetArrangements: '私人飛機及豪華轎車安排',
+        limousineArrangements: '豪華轎車安排',
+        instantLineSkipping: '即時優先通道及免排隊',
+        crossPropertyPrivileges: '跨物業特權（永利度假村網路）'
       },
       annual: {
         cruiseDiscount: '兩人荷美郵輪線路折扣',
@@ -928,7 +1127,98 @@ export const translations = {
         birthdayDinnerCredit: '免費生日晚餐積分',
         connoisseurSeries: '兩位客人免費永利鑑賞家系列',
         golfRound: '永利高爾夫俱樂部兩人免費高爾夫',
-        encoreBostonStay: '免費安可波士頓港酒店住宿'
+        encoreBostonStay: '免費安可波士頓港酒店住宿',
+        bespokeComps: '訂製生日、餐飲及旅行額度'
+      }
+    },
+    ui: {
+      meta: {
+        title: '拉斯維加斯永利VIP主管 | 李慧敏 — 精英禮賓服務',
+        description: '預約李慧敏 — 永利精英多語言VIP主管。賭場免費招待、酒水服務、夜店通道及拉斯維加斯24小時禮賓服務。歡迎直接聯絡。'
+      },
+      logoCaption: '獎勵',
+      brandName: '永利獎勵',
+      scrollTopAria: '永利獎勵 - 返回頂部',
+      toggleMenuAria: '開啟或關閉選單',
+      navAria: {
+        services: 'VIP服務',
+        experience: 'VIP體驗',
+        faq: '常見問題',
+        contact: '聯絡李慧敏'
+      },
+      contactCtaAria: '聯絡李慧敏獲取VIP服務',
+      learnMoreAria: '瞭解更多VIP服務',
+      marquee: ['私密周到', '量身定製', '多語言服務', '永利獎勵', 'VIP通道', '尊享專屬'],
+      hero: {
+        rail: '拉斯維加斯永利 — VIP禮賓 — 始於2005',
+        annoDomini: '二〇二五 · 拉斯維加斯',
+        invitation: '專屬邀約',
+        directAccess: '直接聯絡',
+        languages: '提供英語、普通話、臺語和日語多語言服務。個性化且私密周到。'
+      },
+      labels: {
+        host: '您的主管',
+        rewards: '獎勵與福利',
+        howItWorks: '運作方式',
+        experience: '尊享體驗',
+        knowledge: '知識問答',
+        connect: '聯絡方式',
+        furtherReading: '延伸閱讀'
+      },
+      host: {
+        years: '年卓越服務',
+        rail: '拉斯維加斯永利 · VIP主管',
+        imageAlt: '拉斯維加斯大道夜景 — 永利VIP主管'
+      },
+      experienceImageAlt: '拉斯維加斯永利豪華酒店外觀 - VIP體驗',
+      breadcrumbBrand: '拉斯維加斯VIP主管',
+      breadcrumbAria: '麵包屑導航',
+      tiers: {
+        labels: {
+          red: '入門級別',
+          platinum: '精英級別',
+          black: '黑卡級別',
+          chairman: '主席級別'
+        },
+        credits: '級別積分：',
+        byInvitation: '僅限受邀',
+        maximum: '最高',
+        bespoke: '專屬定製'
+      },
+      guides: {
+        inviteOnly: '僅限受邀',
+        readGuide: '閱讀指南 →',
+        rewards: {
+          title: '永利獎勵等級詳解',
+          desc: '紅卡、白金卡、黑卡與主席俱樂部 — 各等級的含義以及如何充分利用您的福利。'
+        },
+        comps: {
+          title: '如何在永利獲得免費招待',
+          desc: '賭場免費招待內行指南 — 出自真正的永利VIP主管。'
+        },
+        multilingual: {
+          title: '多語言VIP主管服務',
+          desc: '永利提供英語、普通話、臺語和日語VIP主管服務。'
+        },
+        chairman: {
+          title: '主席俱樂部',
+          desc: '僅限受邀的頂級專屬等級。私人博彩貴賓廳、行政主管及最高規格的定製奢華體驗。'
+        }
+      },
+      blog: {
+        contact: '聯絡李慧敏',
+        back: '← 返回拉斯維加斯VIP主管',
+        badge: '永利VIP指南',
+        published: '2026年5月',
+        byline: '李慧敏 · 永利VIP主管',
+        ctaLabel: '準備好親身體驗了嗎？',
+        ctaTitle: '直接聯絡李慧敏',
+        ctaText: '李慧敏精通英語、普通話、臺語和日語。立即聯絡，開始規劃您的拉斯維加斯VIP之旅。',
+        ctaButton: '開啟您的VIP之旅 →',
+        copyright: '© 2026 永利獎勵VIP服務 · 李慧敏',
+        backHome: '← 返回首頁',
+        hostTip: '主管建議',
+        hostNote: '主管提示'
       }
     },
     chatbot: {
@@ -956,7 +1246,7 @@ export const translations = {
       services: 'サービス',
       experience: 'エクスペリエンス',
       contact: 'お問い合わせ',
-      faq: 'FAQ'
+      faq: 'よくある質問'
     },
     hero: {
       title: 'ラスベガス・ウィン・ラスベガスのエリートVIPホストサービス',
@@ -1201,6 +1491,9 @@ export const translations = {
       black: {
         title: 'ブラックカードメンバー'
       },
+      chairman: {
+        title: 'チェアマンズクラブ'
+      },
       sections: {
         gaming: 'ゲーミング特典',
         resort: 'リゾート特典',
@@ -1216,7 +1509,9 @@ export const translations = {
         specialEvents: '特別イベントやトーナメントへの招待',
         prioritySlotService: '優先スロットサービス',
         bonusSlotPoints: 'フリークレジット用スロットポイントボーナス',
-        personalCasinoHost: '個人カジノホスト'
+        personalCasinoHost: '個人カジノホスト',
+        privateSalons: 'プライベート超ハイリミット・ゲーミングサロン',
+        executiveHost: '専任エグゼクティブVIPホスト'
       },
       resort: {
         hotelDiscounts: '限定ホテル割引（最大30%オフ）',
@@ -1232,7 +1527,11 @@ export const translations = {
         lateCheckout: '無料レイトチェックアウト',
         roomUpgrade: 'タワースイートへのルームアップグレード',
         courtesyCheckin: 'タワースイートでの礼儀正しいチェックイン',
-        valetService: '無料バレーサービス'
+        valetService: '無料バレーサービス',
+        privateJetArrangements: 'プライベートジェット＆リムジンの手配',
+        limousineArrangements: 'リムジンの手配',
+        instantLineSkipping: '即時優先アクセス＆列スキップ',
+        crossPropertyPrivileges: 'グループ施設間特典（ウィン・リゾーツ・ネットワーク）'
       },
       annual: {
         cruiseDiscount: '2名様ホランドアメリカライン クルーズ割引',
@@ -1242,7 +1541,98 @@ export const translations = {
         birthdayDinnerCredit: '無料バースデーディナークレジット',
         connoisseurSeries: '2名様無料ウィン コノサー シリーズ',
         golfRound: 'ウィンゴルフクラブで2名様無料ゴルフラウンド',
-        encoreBostonStay: '無料アンコール ボストンハーバー ホテル宿泊'
+        encoreBostonStay: '無料アンコール ボストンハーバー ホテル宿泊',
+        bespokeComps: 'オーダーメイドの誕生日・ダイニング・旅行クレジット'
+      }
+    },
+    ui: {
+      meta: {
+        title: 'ウィン・ラスベガスVIPホスト | ウィニー・リー — エリートコンシェルジュ',
+        description: 'ウィンのエリート多言語VIPホスト、ウィニー・リーにご予約を。カジノコンプ、ボトルサービス、ナイトクラブへのアクセス、ラスベガスでの24時間コンシェルジュ。お気軽に直接ご連絡ください。'
+      },
+      logoCaption: 'リワード',
+      brandName: 'ウィンリワード',
+      scrollTopAria: 'ウィンリワード - ページトップへ',
+      toggleMenuAria: 'メニューの開閉',
+      navAria: {
+        services: 'VIPサービス',
+        experience: 'VIPエクスペリエンス',
+        faq: 'よくある質問',
+        contact: 'ウィニー・リーに連絡'
+      },
+      contactCtaAria: 'VIPサービスについてウィニー・リーに連絡',
+      learnMoreAria: 'VIPサービスの詳細を見る',
+      marquee: ['プライバシー重視', 'オーダーメイド', '多言語対応', 'ウィンリワード', 'VIPアクセス', 'エクスクルーシブ'],
+      hero: {
+        rail: 'ウィン・ラスベガス — VIPコンシェルジュ — 2005年創業',
+        annoDomini: '二〇二五年 · ラスベガス',
+        invitation: '特別なご招待',
+        directAccess: 'ダイレクトアクセス',
+        languages: '英語・中国語（北京語）・台湾語・日本語に対応。きめ細やかで、プライバシーにも配慮します。'
+      },
+      labels: {
+        host: 'あなたのホスト',
+        rewards: 'リワード＆特典',
+        howItWorks: '仕組み',
+        experience: 'エクスペリエンス',
+        knowledge: 'ナレッジ',
+        connect: 'お問い合わせ',
+        furtherReading: '関連ガイド'
+      },
+      host: {
+        years: '年の実績',
+        rail: 'ウィン・ラスベガス · VIPホスト',
+        imageAlt: 'ラスベガス・ストリップの夜景 — ウィンVIPホスト'
+      },
+      experienceImageAlt: 'ウィン・ラスベガスの高級ホテル外観 - VIPエクスペリエンス',
+      breadcrumbBrand: 'ラスベガスVIPホスト',
+      breadcrumbAria: 'パンくずナビゲーション',
+      tiers: {
+        labels: {
+          red: 'エントリーティア',
+          platinum: 'エリートティア',
+          black: 'ブラックティア',
+          chairman: 'チェアマンズティア'
+        },
+        credits: 'ティアクレジット：',
+        byInvitation: '招待制',
+        maximum: '最大',
+        bespoke: 'オーダーメイド'
+      },
+      guides: {
+        inviteOnly: '招待制',
+        readGuide: 'ガイドを読む →',
+        rewards: {
+          title: 'ウィンリワードのティア解説',
+          desc: 'レッド、プラチナ、ブラック、チェアマンズクラブ — 各ティアの意味と特典を最大限に活かす方法。'
+        },
+        comps: {
+          title: 'ウィンでコンプを受ける方法',
+          desc: 'カジノコンプの内部ガイド — 現役ウィンVIPホストが解説。'
+        },
+        multilingual: {
+          title: '多言語VIPホスト',
+          desc: 'ウィンで英語・中国語（北京語）・台湾語・日本語のVIPホストサービス。'
+        },
+        chairman: {
+          title: 'チェアマンズクラブ',
+          desc: '招待制の最上級ティア。プライベート・ゲーミングサロン、エグゼクティブホスト、最高峰のオーダーメイドのラグジュアリー。'
+        }
+      },
+      blog: {
+        contact: 'ウィニー・リーに連絡',
+        back: '← ラスベガスVIPホストに戻る',
+        badge: 'ウィンVIPガイド',
+        published: '2026年5月',
+        byline: 'ウィニー・リー · ウィンVIPホスト',
+        ctaLabel: '体験してみませんか？',
+        ctaTitle: 'ウィニー・リーに直接連絡',
+        ctaText: 'ウィニー・リーは英語、中国語（北京語）、台湾語、日本語に堪能です。ラスベガスでのVIP体験の計画を、今すぐ始めましょう。',
+        ctaButton: 'VIPの旅を始める →',
+        copyright: '© 2026 ウィンリワードVIPサービス · ウィニー・リー',
+        backHome: '← ホームに戻る',
+        hostTip: 'ホストのアドバイス',
+        hostNote: 'ホストより'
       }
     },
     chatbot: {

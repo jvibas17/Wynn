@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { translations } from '../i18n/translations';
 
-type Language = 'en' | 'zh' | 'ja' | 'zh-tw';
+export type Language = 'en' | 'zh' | 'ja' | 'zh-tw';
+
+const HTML_LANG: Record<Language, string> = { en: 'en', zh: 'zh-CN', 'zh-tw': 'zh-TW', ja: 'ja' };
 
 interface LanguageContextType {
   language: Language;
@@ -16,6 +18,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const saved = localStorage.getItem('wynn-language');
     return (saved as Language) || 'en';
   });
+
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[language];
+  }, [language]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);

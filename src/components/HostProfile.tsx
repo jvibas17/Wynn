@@ -7,7 +7,7 @@ export function HostProfile() {
     <div className="relative">
 
       {/* Editorial section label */}
-      <div className="luxury-label mb-0">Your Host</div>
+      <div className="luxury-label mb-0">{t('ui.labels.host')}</div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-stretch">
 
@@ -15,7 +15,7 @@ export function HostProfile() {
         <div className="relative order-2 lg:order-1 min-h-[380px] sm:min-h-[480px] lg:min-h-[600px] overflow-hidden rounded-xl lg:rounded-r-none lg:rounded-l-xl">
           <img
             src="https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&q=80"
-            alt="Las Vegas Strip at Night — Wynn VIP Host"
+            alt={t('ui.host.imageAlt')}
             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
           />
           {/* Gradient overlays for depth */}
@@ -30,7 +30,7 @@ export function HostProfile() {
                 15+
               </div>
               <div className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-cream-200/70">
-                Years of Excellence
+                {t('ui.host.years')}
               </div>
               <div className="mt-2 h-px w-12 bg-royal-500/60" />
             </div>
@@ -38,7 +38,7 @@ export function HostProfile() {
 
           {/* Vertical rail — right edge of image */}
           <div className="hidden lg:flex absolute right-4 top-8 bottom-8 items-center">
-            <span className="vertical-rail opacity-30">Wynn Las Vegas · VIP Host</span>
+            <span className="vertical-rail opacity-30">{t('ui.host.rail')}</span>
           </div>
         </div>
 

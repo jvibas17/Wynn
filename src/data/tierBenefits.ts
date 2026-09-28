@@ -311,7 +311,7 @@ export const tierBenefits = {
       },
       {
         name: 'benefits.gaming.bonusSlotPoints',
-        value: 'Maximum',
+        value: 'ui.tiers.maximum',
         available: true
       },
       {
@@ -364,12 +364,12 @@ export const tierBenefits = {
       },
       {
         name: 'benefits.annual.spaCredit',
-        value: 'Bespoke',
+        value: 'ui.tiers.bespoke',
         available: true
       },
       {
         name: 'benefits.annual.birthdayDinnerCredit',
-        value: 'Bespoke',
+        value: 'ui.tiers.bespoke',
         available: true
       },
       {

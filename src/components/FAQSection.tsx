@@ -22,7 +22,7 @@ export function FAQSection() {
           <div className="editorial-header mb-12 lg:mb-20">
             <div className="editorial-number">?</div>
             <div>
-              <div className="luxury-label">Knowledge</div>
+              <div className="luxury-label">{t('ui.labels.knowledge')}</div>
               <h2 className="heading-display text-white mb-4">
                 {t('faq.title')}
               </h2>

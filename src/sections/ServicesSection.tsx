@@ -52,7 +52,7 @@ export function ServicesSection() {
           <div className="editorial-header mb-16 lg:mb-24">
             <div className="editorial-number">01</div>
             <div>
-              <div className="luxury-label">Rewards &amp; Benefits</div>
+              <div className="luxury-label">{t('ui.labels.rewards')}</div>
               <h2 className="heading-display text-white mb-6">
                 {t('services.title')}
               </h2>
@@ -89,7 +89,7 @@ export function ServicesSection() {
         <AnimatedSection>
           {/* Section heading — editorial */}
           <div className="flex items-end gap-6 lg:gap-10 mb-12 lg:mb-16 border-t border-royal-500/15 pt-12 lg:pt-16">
-            <div className="luxury-label self-start mt-1">How it Works</div>
+            <div className="luxury-label self-start mt-1">{t('ui.labels.howItWorks')}</div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
               {t('services.earnRedeem.title')}
             </h3>

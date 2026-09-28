@@ -31,7 +31,6 @@ const tierConfig = {
     accentHover: 'hover:text-red-400',
     accentCheck: 'text-red-400',
     numeral: 'I',
-    label: 'Entry',
   },
   platinum: {
     accentBar: 'bg-accent-400',
@@ -41,7 +40,6 @@ const tierConfig = {
     accentHover: 'hover:text-accent-300',
     accentCheck: 'text-accent-300',
     numeral: 'II',
-    label: 'Elite',
   },
   black: {
     accentBar: 'bg-gradient-to-r from-cream-200/80 via-cream-100 to-cream-200/80',
@@ -51,7 +49,6 @@ const tierConfig = {
     accentHover: 'hover:text-cream-100',
     accentCheck: 'text-cream-200',
     numeral: 'III',
-    label: 'Black',
   },
   chairman: {
     accentBar: 'bg-gradient-to-r from-amber-700/60 via-amber-400 to-amber-700/60',
@@ -61,7 +58,6 @@ const tierConfig = {
     accentHover: 'hover:text-amber-300',
     accentCheck: 'text-amber-300',
     numeral: 'IV',
-    label: "Chairman's",
   },
 };
 
@@ -102,7 +98,7 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
                 <Check className={`h-3.5 w-3.5 flex-shrink-0 mt-0.5 ${cfg.accentCheck}`} />
                 <span>
                   {t(b.name)}
-                  {b.value && <span className={`ml-1 font-semibold ${cfg.accentText}`}>{b.value}</span>}
+                  {b.value && <span className={`ml-1 font-semibold ${cfg.accentText}`}>{t(String(b.value))}</span>}
                 </span>
               </div>
             ))}
@@ -145,7 +141,7 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
         {/* Tier label */}
         <div className={`inline-flex items-center gap-2 mb-4`}>
           <span className={`text-[0.6rem] font-bold tracking-[0.3em] uppercase ${cfg.accentText}`}>
-            {cfg.label} Tier
+            {t(`ui.tiers.labels.${tier}`)}
           </span>
           <span className={`w-6 h-px ${cfg.accentBar}`} />
         </div>
@@ -159,11 +155,11 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
         {tier === 'chairman' ? (
           <p className={`text-xs font-medium tracking-wider uppercase ${cfg.accentText} opacity-90 flex items-center gap-2`}>
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400/70" />
-            {tierRange}
+            {t('ui.tiers.byInvitation')}
           </p>
         ) : (
           <p className={`text-xs font-medium tracking-wider uppercase ${cfg.accentText} opacity-70`}>
-            Tier Credits: {tierRange}
+            {t('ui.tiers.credits')} {tierRange}
           </p>
         )}
       </div>

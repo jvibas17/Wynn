@@ -9,14 +9,14 @@ export function HeroSection() {
 
       {/* Vertical side rail — luxury identifier */}
       <div className="hidden lg:block absolute left-2 xl:left-6 top-1/2 -translate-y-1/2 z-10">
-        <span className="vertical-rail">Wynn Las Vegas — VIP Concierge — Est. MMV</span>
+        <span className="vertical-rail">{t('ui.hero.rail')}</span>
       </div>
 
       {/* Massive Roman numeral year accent — top right corner */}
       <div className="hidden md:block absolute top-28 right-0 z-0 text-right pr-4 lg:pr-12 opacity-100">
         <div className="accent-numeral">MMXXV</div>
         <div className="text-[0.55rem] tracking-[0.45em] uppercase text-royal-400/40 mt-2 mr-2">
-          Anno Domini · Vegas
+          {t('ui.hero.annoDomini')}
         </div>
       </div>
 
@@ -26,7 +26,7 @@ export function HeroSection() {
         {/* Left: Title block — 8 of 12 cols */}
         <div className="col-span-12 lg:col-span-8">
           <div className="luxury-label animate-fade-up">
-            An Exclusive Invitation
+            {t('ui.hero.invitation')}
           </div>
 
           <h1 className="heading-display text-gold-foil mb-6 sm:mb-8 animate-fade-up">
@@ -45,9 +45,9 @@ export function HeroSection() {
         {/* Right: Floating info card — 4 of 12 cols, drops below title */}
         <div className="col-span-12 lg:col-span-4 lg:pt-24 animate-fade-up-delay">
           <div className="hero-info-card">
-            <div className="luxury-label">Direct Access</div>
+            <div className="luxury-label">{t('ui.hero.directAccess')}</div>
             <p className="text-cream-100/70 text-sm sm:text-base leading-relaxed mb-6">
-              Multilingual support in English, Mandarin, Taiwanese &amp; Japanese. Personalised &amp; discreet.
+              {t('ui.hero.languages')}
             </p>
             <div className="flex flex-col gap-3">
               <CTAButton
@@ -55,14 +55,14 @@ export function HeroSection() {
                 showArrow={true}
                 href="#contact"
                 className="text-sm w-full"
-                aria-label="Contact Winnie Lee for VIP Services"
+                aria-label={t('ui.contactCtaAria')}
               />
               <CTAButton
                 text={t('hero.cta.learnMore')}
                 variant="outline"
                 href="#services"
                 className="text-sm w-full"
-                aria-label="Learn more about VIP services"
+                aria-label={t('ui.learnMoreAria')}
               />
             </div>
           </div>

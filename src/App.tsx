@@ -17,7 +17,12 @@ import { useLanguage } from './contexts/LanguageContext';
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  useEffect(() => {
+    document.title = t('ui.meta.title');
+    document.querySelector('meta[name="description"]')?.setAttribute('content', t('ui.meta.description'));
+  }, [language]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -52,11 +57,11 @@ function App() {
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy-950/95 backdrop-blur-md py-2 sm:py-4 shadow-navy' : 'py-4 sm:py-6'}`}>
           <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
             <div className="flex items-center justify-between h-16 lg:h-20">
-              <button onClick={scrollToTop} className="flex items-center gap-3 group flex-shrink-0" aria-label="Wynn Rewards - Scroll to top">
+              <button onClick={scrollToTop} className="flex items-center gap-3 group flex-shrink-0" aria-label={t('ui.scrollTopAria')}>
                 <span className="w-px h-7 sm:h-8 lg:h-10 bg-royal-500/60 group-hover:bg-royal-500 transition-colors duration-300 flex-shrink-0" />
                 <div className="flex flex-col leading-none">
                   <span className="font-serif italic text-white text-xl sm:text-2xl lg:text-3xl leading-none tracking-wide group-hover:text-royal-300 transition-colors duration-300">Wynn</span>
-                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">Rewards</span>
+                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">{t('ui.logoCaption')}</span>
                 </div>
               </button>
 
@@ -64,10 +69,10 @@ function App() {
               <div className="hidden md:flex items-center justify-center flex-1 mx-6 lg:mx-10 xl:mx-16">
                 <div className="flex items-center gap-7 xl:gap-10">
                   {[
-                    { href: '#services', label: t('nav.services'), num: '01', ariaLabel: 'VIP Services' },
-                    { href: '#experience', label: t('nav.experience'), num: '02', ariaLabel: 'VIP Experience' },
-                    { href: '#faq', label: t('nav.faq'), num: '03', ariaLabel: 'Frequently Asked Questions' },
-                    { href: '#contact', label: t('nav.contact'), num: '04', ariaLabel: 'Contact Winnie Lee' },
+                    { href: '#services', label: t('nav.services'), num: '01', ariaLabel: t('ui.navAria.services') },
+                    { href: '#experience', label: t('nav.experience'), num: '02', ariaLabel: t('ui.navAria.experience') },
+                    { href: '#faq', label: t('nav.faq'), num: '03', ariaLabel: t('ui.navAria.faq') },
+                    { href: '#contact', label: t('nav.contact'), num: '04', ariaLabel: t('ui.navAria.contact') },
                   ].map(({ href, label, num, ariaLabel }) => (
                     <a
                       key={href}
@@ -88,7 +93,7 @@ function App() {
                 <LanguageSwitch />
                 <a
                   href="#contact"
-                  aria-label="Contact Winnie Lee for VIP Services"
+                  aria-label={t('ui.contactCtaAria')}
                   onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                   className="group flex items-center gap-2.5 border border-royal-500/35 hover:border-royal-500/70 px-4 lg:px-5 py-2 lg:py-2.5 transition-all duration-300 hover:bg-royal-500/5 flex-shrink-0"
                 >
@@ -101,7 +106,7 @@ function App() {
               <button
                 className="md:hidden text-white p-2 sm:p-3 rounded-lg hover:bg-royal-500/10 transition-colors touch-manipulation flex-shrink-0"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle mobile menu"
+                aria-label={t('ui.toggleMenuAria')}
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
@@ -115,27 +120,27 @@ function App() {
               <div className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6">
                 <div className="flex flex-col space-y-6">
                   {[
-                    { href: '#services', label: 'VIP Services', key: 'nav.services', num: '01' },
-                    { href: '#experience', label: 'VIP Experience', key: 'nav.experience', num: '02' },
-                    { href: '#faq', label: 'Frequently Asked Questions', key: 'nav.faq', num: '03' },
-                    { href: '#contact', label: 'Contact Winnie Lee', key: 'nav.contact', num: '04' },
-                  ].map(({ href, label, key, num }) => (
+                    { href: '#services', key: 'services', num: '01' },
+                    { href: '#experience', key: 'experience', num: '02' },
+                    { href: '#faq', key: 'faq', num: '03' },
+                    { href: '#contact', key: 'contact', num: '04' },
+                  ].map(({ href, key, num }) => (
                     <a
                       key={href}
                       href={href}
                       className="group flex items-center gap-4 py-3 sm:py-4 border-b border-royal-500/10 touch-manipulation"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      aria-label={label}
+                      aria-label={t(`ui.navAria.${key}`)}
                     >
                       <span className="font-serif italic text-royal-500/30 text-sm w-6 flex-shrink-0 group-hover:text-royal-500/60 transition-colors">{num}</span>
                       <span className="w-px h-4 bg-royal-500/15 flex-shrink-0 group-hover:bg-royal-500/40 transition-colors" />
-                      <span className="text-sm sm:text-base tracking-[0.18em] uppercase text-white/65 group-hover:text-white transition-colors duration-300">{t(key)}</span>
+                      <span className="text-sm sm:text-base tracking-[0.18em] uppercase text-white/65 group-hover:text-white transition-colors duration-300">{t(`nav.${key}`)}</span>
                     </a>
                   ))}
                   <div className="py-3"><LanguageSwitch /></div>
                   <a
                     href="#contact"
-                    aria-label="Contact Winnie Lee for VIP Services"
+                    aria-label={t('ui.contactCtaAria')}
                     onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                     className="group flex items-center justify-between border border-royal-500/40 hover:border-royal-500/80 px-5 py-4 transition-all duration-300 hover:bg-royal-500/5"
                   >
@@ -172,18 +177,9 @@ function App() {
       {/* Marquee ribbon — scrolling banner of values */}
       <div className="marquee">
         <div className="marquee-track">
-          <span className="marquee-item">Discreet</span>
-          <span className="marquee-item">Bespoke</span>
-          <span className="marquee-item">Multilingual</span>
-          <span className="marquee-item">Wynn Rewards</span>
-          <span className="marquee-item">VIP Access</span>
-          <span className="marquee-item">Exclusive</span>
-          <span className="marquee-item">Discreet</span>
-          <span className="marquee-item">Bespoke</span>
-          <span className="marquee-item">Multilingual</span>
-          <span className="marquee-item">Wynn Rewards</span>
-          <span className="marquee-item">VIP Access</span>
-          <span className="marquee-item">Exclusive</span>
+          {[...t('ui.marquee'), ...t('ui.marquee')].map((item: string, i: number) => (
+            <span key={i} className="marquee-item">{item}</span>
+          ))}
         </div>
       </div>
 
@@ -215,7 +211,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center">
               <Crown className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-royal-500" />
-              <span className="ml-2 sm:ml-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif">Wynn Rewards</span>
+              <span className="ml-2 sm:ml-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{t('ui.brandName')}</span>
             </div>
             <div className="text-center md:text-right">
               <p className="text-cream-100 text-sm sm:text-base md:text-lg lg:text-xl">{t('footer.copyright')}</p>
