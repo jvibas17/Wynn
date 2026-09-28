@@ -193,7 +193,7 @@ function App() {
       <section className="py-12 sm:py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-            <AnimatedSection><StatCard number="3" text={t('stats.tiers')} /></AnimatedSection>
+            <AnimatedSection><StatCard number="4"text={t('stats.tiers')} /></AnimatedSection>
             <AnimatedSection><StatCard number="100%" text={t('stats.satisfaction')} /></AnimatedSection>
           </div>
         </div>

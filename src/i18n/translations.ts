@@ -154,7 +154,7 @@ export const translations = {
         },
         {
           question: 'How does the Wynn Rewards program work?',
-          answer: 'Wynn Rewards has three tiers: Red, Platinum, and Black. You earn tier credits through casino play, which unlock increasing benefits like comps, free play, dining credits, and exclusive access.'
+          answer: 'Wynn Rewards has four tiers: Red, Platinum, Black, and the invitation-only Chairman\'s Club. You earn tier credits through casino play, which unlock increasing benefits like comps, free play, dining credits, and exclusive access.'
         },
         {
           question: 'What languages does Winnie Lee speak?',
@@ -430,7 +430,7 @@ export const translations = {
     },
     services: {
       title: '永利奖励计划',
-      subtitle: '通过我们专为尊贵客人设计的独家三级奖励计划，体验无与伦比的奢华。',
+      subtitle: '通过我们的独家四级奖励计划 — 从红卡到顶级专属的主席俱乐部 — 体验无与伦比的奢华。',
       earnRedeem: {
         title: '如何赚取和兑换',
         tierCredits: {
@@ -568,7 +568,7 @@ export const translations = {
         },
         {
           question: '永利奖励计划如何运作？',
-          answer: '永利奖励有三个等级：红卡、白金卡和黑卡。您通过赌场游戏赚取等级积分，解锁递增的福利，如优惠、免费游戏、餐饮积分和独家通道。'
+          answer: '永利奖励有四个等级：红卡、白金卡、黑卡，以及仅限受邀的主席俱乐部。您通过赌场游戏赚取等级积分，解锁递增的福利，如优惠、免费游戏、餐饮积分和独家通道。'
         },
         {
           question: '李慧敏说哪些语言？',
@@ -844,7 +844,7 @@ export const translations = {
     },
     services: {
       title: '永利獎勵計畫',
-      subtitle: '通過我們專為尊貴客人設計的獨家三級獎勵計畫，體驗無與倫比的奢華。',
+      subtitle: '透過我們的獨家四級獎勵計畫 — 從紅卡到頂級專屬的主席俱樂部 — 體驗無與倫比的奢華。',
       earnRedeem: {
         title: '如何賺取和兌換',
         tierCredits: {
@@ -982,7 +982,7 @@ export const translations = {
         },
         {
           question: '永利獎勵計畫如何運作？',
-          answer: '永利獎勵有三個等級：紅卡、白金卡和黑卡。您通過賭場遊戲賺取等級積分，解鎖遞增的福利，如優惠、免費遊戲、餐飲積分和獨家通道。'
+          answer: '永利獎勵有四個等級：紅卡、白金卡、黑卡，以及僅限受邀的主席俱樂部。您通過賭場遊戲賺取等級積分，解鎖遞增的福利，如優惠、免費遊戲、餐飲積分和獨家通道。'
         },
         {
           question: '李慧敏說哪些語言？',
@@ -1258,7 +1258,7 @@ export const translations = {
     },
     services: {
       title: 'ウィンリワードプログラム',
-      subtitle: '洗練されたゲスト向けにデザインされた限定3段階リワードプログラムで、比類なき贅沢を体験してください。',
+      subtitle: 'レッドから最上級のチェアマンズクラブまで — 限定4段階のリワードプログラムで、比類なき贅沢を体験してください。',
       earnRedeem: {
         title: '獲得・交換方法',
         tierCredits: {
@@ -1396,7 +1396,7 @@ export const translations = {
         },
         {
           question: 'ウィンリワードプログラムはどのように機能しますか？',
-          answer: 'ウィンリワードには3つのティアがあります：レッド、プラチナ、ブラック。カジノプレイでティアクレジットを獲得し、コンプ、フリープレイ、ダイニングクレジット、限定アクセスなどの増加する特典を解除します。'
+          answer: 'ウィンリワードには4つのティアがあります：レッド、プラチナ、ブラック、そして招待制のチェアマンズクラブ。カジノプレイでティアクレジットを獲得し、コンプ、フリープレイ、ダイニングクレジット、限定アクセスなどの増加する特典を解除します。'
         },
         {
           question: 'ウィニー・リーは何語を話しますか？',
