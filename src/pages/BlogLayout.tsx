@@ -1,4 +1,5 @@
 import { Fragment, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Crown } from 'lucide-react';
 import { LanguageSwitch } from '../components/LanguageSwitch';
 import { useLanguage, type Language } from '../contexts/LanguageContext';
@@ -11,6 +12,8 @@ interface BlogLayoutProps {
 export function BlogLayout({ article }: BlogLayoutProps) {
   const { language, t } = useLanguage();
   const content = article[language];
+  const { pathname } = useLocation();
+  const related = GUIDES.filter((g) => g.to !== pathname);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,7 +23,8 @@ export function BlogLayout({ article }: BlogLayoutProps) {
     document.title = content.docTitle;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', content.metaDescription);
-  }, [content]);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://vegasviphost.net${pathname}`);
+  }, [content, pathname]);
 
   const scrollToContact = () => {
     window.location.href = '/#contact';
@@ -93,6 +97,28 @@ export function BlogLayout({ article }: BlogLayoutProps) {
         </div>
       </div>
 
+      {/* Related guides — internal links between the guide pages */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl pb-16">
+        <p className="text-[0.6rem] tracking-[0.28em] uppercase text-royal-400/50 mb-6">{t('ui.labels.furtherReading')}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {related.map(({ to, guide }) => (
+            <Link
+              key={to}
+              to={to}
+              className="group block border border-royal-500/15 p-5 transition-all duration-300 hover:border-royal-500/40 hover:bg-royal-500/5"
+            >
+              <h3 className="font-serif font-semibold text-white text-base lg:text-lg mb-2 leading-snug transition-colors group-hover:text-royal-300">
+                {t(`ui.guides.${guide}.title`)}
+              </h3>
+              <p className="text-cream-100/50 text-sm leading-relaxed mb-4">{t(`ui.guides.${guide}.desc`)}</p>
+              <span className="text-[0.6rem] tracking-[0.18em] uppercase text-royal-400/50 group-hover:text-royal-400 transition-colors">
+                {t('ui.guides.readGuide')}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="border-t border-royal-500/10 py-16 sm:py-24 bg-navy-950/80">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
@@ -118,6 +144,12 @@ export function BlogLayout({ article }: BlogLayoutProps) {
     </div>
   );
 }
+
+const GUIDES = [
+  { to: '/wynn-rewards-guide', guide: 'rewards' },
+  { to: '/how-to-get-comps-at-wynn-las-vegas', guide: 'comps' },
+  { to: '/multilingual-vip-host-las-vegas', guide: 'multilingual' },
+];
 
 function renderBlock(block: ArticleBlock, t: (key: string) => string) {
   switch (block[0]) {

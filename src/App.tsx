@@ -22,6 +22,7 @@ function App() {
   useEffect(() => {
     document.title = t('ui.meta.title');
     document.querySelector('meta[name="description"]')?.setAttribute('content', t('ui.meta.description'));
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://vegasviphost.net/');
   }, [language]);
 
   useEffect(() => {

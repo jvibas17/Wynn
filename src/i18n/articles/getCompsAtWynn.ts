@@ -3,8 +3,8 @@ import type { Article } from './types';
 
 export const getCompsAtWynn: Record<Language, Article> = {
   en: {
-    docTitle: 'How to Get Comps at Wynn Las Vegas (2026) | VIP Host Guide',
-    metaDescription: 'Learn how to get casino comps at Wynn Las Vegas in 2026. A real Wynn VIP host explains how comp ratings work, what to ask for, and how to maximize free rooms, dining, and show tickets.',
+    docTitle: 'How to Get Comps at Wynn Las Vegas',
+    metaDescription: 'How casino comps work at Wynn: rated play, what hosts track, rooms, dining & shows. Honest tips from VIP host Winnie Lee. Call +1-702-355-0238.',
     title: 'How to Get Comps at Wynn Las Vegas (2026 Guide)',
     description: 'The real insider\'s guide to casino comps at Wynn. Winnie Lee — a VIP host at Wynn for 15+ years — explains exactly how the rating system works, what you can ask for, and the mistakes most guests make.',
     readTime: '7 min read',
