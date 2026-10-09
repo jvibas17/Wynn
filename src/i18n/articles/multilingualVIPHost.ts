@@ -3,8 +3,8 @@ import type { Article } from './types';
 
 export const multilingualVIPHost: Record<Language, Article> = {
   en: {
-    docTitle: 'Chinese & Japanese Speaking VIP Host Las Vegas | Winnie Lee — Wynn',
-    metaDescription: 'Book a multilingual VIP host at Wynn Las Vegas. Winnie Lee speaks English, Mandarin Chinese, Taiwanese, and Japanese — the only 4-language VIP host at Wynn. Casino comps, bottle service, 24/7 concierge.',
+    docTitle: 'Multilingual VIP Host Las Vegas | Winnie Lee',
+    metaDescription: 'English, Mandarin, Taiwanese & Japanese VIP hosting at Wynn Las Vegas. Casino, dining, nightlife & transport for international guests. Contact Winnie Lee today.',
     title: 'Chinese & Japanese Speaking VIP Host at Wynn Las Vegas',
     description: 'Winnie Lee is the only VIP host at Wynn Las Vegas fluent in English, Mandarin Chinese, Taiwanese, and Japanese. This is what that means for your Las Vegas experience.',
     readTime: '6 min read',

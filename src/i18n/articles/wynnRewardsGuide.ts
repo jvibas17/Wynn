@@ -3,8 +3,8 @@ import type { Article } from './types';
 
 export const wynnRewardsGuide: Record<Language, Article> = {
   en: {
-    docTitle: 'Wynn Rewards Tiers Explained (2026) | Red, Platinum, Black & Chairman\'s Club',
-    metaDescription: 'Complete guide to Wynn Rewards tiers in 2026. Learn how Red, Platinum, Black, and the invite-only Chairman\'s Club work — from a real Wynn VIP host.',
+    docTitle: 'Wynn Rewards Guide | VIP Host Tips',
+    metaDescription: 'Clear overview of Wynn Rewards tiers, COMP DOLLARS & how a VIP host helps at Wynn Las Vegas. Confirm current benefits with Winnie Lee — lovepicaso888@gmail.com.',
     title: 'Wynn Rewards Tiers Explained: Red, Platinum, Black & Chairman\'s Club (2026)',
     description: 'Everything you need to know about Wynn Rewards — how all four tiers work, how to earn credits, and how to maximize your comps. Written by Winnie Lee, a VIP host at Wynn Las Vegas.',
     readTime: '8 min read',

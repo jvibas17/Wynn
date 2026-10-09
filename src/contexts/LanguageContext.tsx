@@ -15,7 +15,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('wynn-language');
+    // Guard for build-time prerendering (no localStorage in Node).
+    const saved = typeof window !== 'undefined' ? window.localStorage.getItem('wynn-language') : null;
     return (saved as Language) || 'en';
   });
 

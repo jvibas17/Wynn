@@ -1,23 +1,18 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './App.tsx';
+import { BrowserRouter } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { WynnRewardsGuide } from './pages/WynnRewardsGuide.tsx';
-import { GetCompsAtWynn } from './pages/GetCompsAtWynn.tsx';
-import { MultilingualVIPHost } from './pages/MultilingualVIPHost.tsx';
+import { AppRoutes } from './AppRoutes';
 import './index.css';
 
+// Each route ships prerendered HTML (see scripts/prerender.mjs) so crawlers see real
+// content. In the browser we still mount with createRoot (not hydrate) so the saved
+// language preference and client-only behaviour work exactly as before.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <LanguageProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/wynn-rewards-guide" element={<WynnRewardsGuide />} />
-          <Route path="/how-to-get-comps-at-wynn-las-vegas" element={<GetCompsAtWynn />} />
-          <Route path="/multilingual-vip-host-las-vegas" element={<MultilingualVIPHost />} />
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </LanguageProvider>
   </StrictMode>

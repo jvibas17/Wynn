@@ -305,8 +305,8 @@ export const translations = {
     },
     ui: {
       meta: {
-        title: 'Wynn VIP Host Las Vegas | Winnie Lee — Elite Concierge',
-        description: "Book Winnie Lee, Wynn's elite multilingual VIP host. Casino comps, bottle service, nightclub access & 24/7 concierge in Las Vegas. Contact her directly."
+        title: 'Wynn VIP Host Las Vegas | Winnie Lee',
+        description: 'Multilingual VIP host at Wynn Las Vegas. Winnie Lee helps with casino play, comps, dining, nightlife & groups in English, Mandarin, Taiwanese & Japanese.'
       },
       logoCaption: 'Rewards',
       brandName: 'Wynn Rewards',
