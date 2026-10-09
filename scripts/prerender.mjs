@@ -18,7 +18,9 @@ for (const { path: route } of PAGES) {
   const out = template
     .replace(SEO_BLOCK, () => `<!-- SEO:START -->\n    ${head}\n    <!-- SEO:END -->`)
     .replace('<div id="root"></div>', () => `<div id="root">${html}</div>`);
-  const file = route === '/' ? path.join(dist, 'index.html') : path.join(dist, route.slice(1), 'index.html');
+  // Write /foo as dist/foo.html (not dist/foo/index.html): Netlify serves foo.html at
+  // /foo with no redirect, so the URL matches the canonical (no trailing slash).
+  const file = route === '/' ? path.join(dist, 'index.html') : path.join(dist, `${route.slice(1)}.html`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, out);
   console.log(`prerendered ${route} -> ${path.relative(root, file)} (${out.length} bytes)`);
