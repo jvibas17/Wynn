@@ -11,8 +11,7 @@ export function LeadCaptureForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    message: ''
+    phone: ''
   });
   // Hidden from people; bots that fill every field reveal themselves here.
   const [trap, setTrap] = useState('');
@@ -30,7 +29,7 @@ export function LeadCaptureForm() {
 
     if (trap) {
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '' });
       return;
     }
 
@@ -46,7 +45,6 @@ export function LeadCaptureForm() {
         name: formData.name,
         email: formData.email,
         phone: formData.phone || '—',
-        message: formData.message || '—',
         language,
       };
 
@@ -59,7 +57,7 @@ export function LeadCaptureForm() {
 
       // Admin email succeeded — mark success immediately
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '' });
 
       try {
         const guestTemplateParams = {
@@ -119,17 +117,6 @@ export function LeadCaptureForm() {
           className="input-field text-lg sm:text-xl py-4 sm:py-5"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        />
-      </div>
-      <div>
-        <textarea
-          name="message"
-          placeholder={t('contact.form.message')}
-          rows={3}
-          maxLength={2000}
-          className="input-field text-lg sm:text-xl py-4 sm:py-5 resize-y"
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         />
       </div>
       <div className="absolute -left-[10000px] w-px h-px overflow-hidden" aria-hidden="true">

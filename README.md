@@ -30,7 +30,7 @@ To add a page, add its path to `PAGE_PATHS` in `src/i18n/routes.ts` and register
 
 ## Contact form
 
-The form sends `name`, `email`, `phone`, `message` and `language` to the EmailJS template `template_vitqt4j`. The template must include `{{message}}` for the message to appear in the email.
+The form sends `name`, `email`, `phone` and `language` to the EmailJS template `template_vitqt4j`.
 
 ## Supabase
 
