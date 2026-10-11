@@ -115,7 +115,6 @@ export const translations = {
       }
     },
     footer: {
-      copyright: '© 2024 Wynn Rewards VIP Services',
       subtitle: 'Elite hospitality experiences in Las Vegas'
     },
     host: {
@@ -178,7 +177,7 @@ export const translations = {
     },
     seo: {
       badge: 'Premier VIP Host Services',
-      title: 'Las Vegas VIP Host Services | Elite Casino Host & Concierge 2024',
+      title: 'Las Vegas VIP Host Services: Elite Casino Host & Concierge',
       subtitle: 'Experience unparalleled luxury with Winnie Lee, your dedicated VIP host at Wynn Las Vegas. Exclusive casino arrangements, premium dining, entertainment access, and personalized concierge services.',
       trust: {
         rating: '5.0 Star Rating',
@@ -306,11 +305,9 @@ export const translations = {
     ui: {
       meta: {
         title: 'Wynn VIP Host Las Vegas | Winnie Lee — Elite Concierge',
-        description: "Book Winnie Lee, Wynn's elite multilingual VIP host. Casino comps, bottle service, nightclub access & 24/7 concierge in Las Vegas. Contact her directly."
+        description: 'Winnie Lee, multilingual VIP casino host at Wynn Las Vegas. Wynn Rewards guidance, casino comps, dining & show reservations and 24/7 concierge in English, Chinese & Japanese.'
       },
-      logoCaption: 'Rewards',
-      brandName: 'Wynn Rewards',
-      scrollTopAria: 'Wynn Rewards - Scroll to top',
+      scrollTopAria: 'Vegas VIP Host - Scroll to top',
       toggleMenuAria: 'Toggle mobile menu',
       navAria: {
         services: 'VIP Services',
@@ -387,7 +384,6 @@ export const translations = {
         ctaTitle: 'Contact Winnie Lee Directly',
         ctaText: 'Winnie Lee is fluent in English, Mandarin, Taiwanese, and Japanese. Reach out to start planning your VIP Las Vegas experience.',
         ctaButton: 'Begin Your VIP Journey →',
-        copyright: '© 2026 Wynn Rewards VIP Services · Winnie Lee',
         backHome: '← Back to Home',
         hostTip: 'Host Tip',
         hostNote: 'Host Note'
@@ -529,7 +525,6 @@ export const translations = {
       }
     },
     footer: {
-      copyright: '© 2024 永利奖励VIP服务',
       subtitle: '拉斯维加斯精英酒店体验'
     },
     host: {
@@ -592,7 +587,7 @@ export const translations = {
     },
     seo: {
       badge: '顶级VIP主管服务',
-      title: '拉斯维加斯VIP主管服务 | 精英赌场主管与礼宾服务 2024',
+      title: '拉斯维加斯VIP主管服务：精英赌场主管与礼宾服务',
       subtitle: '与李慧敏一起体验无与伦比的奢华，她是您在永利拉斯维加斯的专属VIP主管。独家赌场安排、高端餐饮、娱乐通道和个性化礼宾服务。',
       trust: {
         rating: '5.0星评级',
@@ -720,11 +715,9 @@ export const translations = {
     ui: {
       meta: {
         title: '拉斯维加斯永利VIP主管 | 李慧敏 — 精英礼宾服务',
-        description: '预约李慧敏 — 永利精英多语言VIP主管。赌场免费招待、酒水服务、夜店通道及拉斯维加斯24小时礼宾服务。欢迎直接联系。'
+        description: '李慧敏，拉斯维加斯永利多语言VIP赌场主管。提供永利奖励咨询、赌场免费招待、餐厅及演出预订，以及中文、英语和日语24小时礼宾服务。'
       },
-      logoCaption: '奖励',
-      brandName: '永利奖励',
-      scrollTopAria: '永利奖励 - 返回顶部',
+      scrollTopAria: 'Vegas VIP Host - 返回顶部',
       toggleMenuAria: '打开或关闭菜单',
       navAria: {
         services: 'VIP服务',
@@ -801,7 +794,6 @@ export const translations = {
         ctaTitle: '直接联系李慧敏',
         ctaText: '李慧敏精通英语、普通话、台语和日语。立即联系，开始规划您的拉斯维加斯VIP之旅。',
         ctaButton: '开启您的VIP之旅 →',
-        copyright: '© 2026 永利奖励VIP服务 · 李慧敏',
         backHome: '← 返回首页',
         hostTip: '主管建议',
         hostNote: '主管提示'
@@ -943,7 +935,6 @@ export const translations = {
       }
     },
     footer: {
-      copyright: '© 2024 永利獎勵VIP服務',
       subtitle: '拉斯維加斯精英酒店體驗'
     },
     host: {
@@ -1006,7 +997,7 @@ export const translations = {
     },
     seo: {
       badge: '頂級VIP主管服務',
-      title: '拉斯維加斯VIP主管服務 | 精英賭場主管與禮賓服務 2024',
+      title: '拉斯維加斯VIP主管服務：精英賭場主管與禮賓服務',
       subtitle: '與李慧敏一起體驗無與倫比的奢華，她是您在永利拉斯維加斯的專屬VIP主管。獨家賭場安排、高端餐飲、娛樂通道和個人化禮賓服務。',
       trust: {
         rating: '5.0星評級',
@@ -1134,11 +1125,9 @@ export const translations = {
     ui: {
       meta: {
         title: '拉斯維加斯永利VIP主管 | 李慧敏 — 精英禮賓服務',
-        description: '預約李慧敏 — 永利精英多語言VIP主管。賭場免費招待、酒水服務、夜店通道及拉斯維加斯24小時禮賓服務。歡迎直接聯絡。'
+        description: '李慧敏，拉斯維加斯永利多語言VIP賭場主管。提供永利獎勵諮詢、賭場免費招待、餐廳及演出預訂，以及中文、英語和日語24小時禮賓服務。'
       },
-      logoCaption: '獎勵',
-      brandName: '永利獎勵',
-      scrollTopAria: '永利獎勵 - 返回頂部',
+      scrollTopAria: 'Vegas VIP Host - 返回頂部',
       toggleMenuAria: '開啟或關閉選單',
       navAria: {
         services: 'VIP服務',
@@ -1215,7 +1204,6 @@ export const translations = {
         ctaTitle: '直接聯絡李慧敏',
         ctaText: '李慧敏精通英語、普通話、臺語和日語。立即聯絡，開始規劃您的拉斯維加斯VIP之旅。',
         ctaButton: '開啟您的VIP之旅 →',
-        copyright: '© 2026 永利獎勵VIP服務 · 李慧敏',
         backHome: '← 返回首頁',
         hostTip: '主管建議',
         hostNote: '主管提示'
@@ -1357,7 +1345,6 @@ export const translations = {
       }
     },
     footer: {
-      copyright: '© 2024 ウィンリワードVIPサービス',
       subtitle: 'ラスベガスのエリートホスピタリティエクスペリエンス'
     },
     host: {
@@ -1420,7 +1407,7 @@ export const translations = {
     },
     seo: {
       badge: 'プレミアVIPホストサービス',
-      title: 'ラスベガスVIPホストサービス | エリートカジノホスト＆コンシェルジュ 2024',
+      title: 'ラスベガスVIPホストサービス：エリートカジノホスト＆コンシェルジュ',
       subtitle: 'ウィンラスベガスの専任VIPホスト、ウィニー・リーと共に比類なき贅沢を体験。限定カジノ手配、プレミアムダイニング、エンターテイメントアクセス、パーソナライズされたコンシェルジュサービス。',
       trust: {
         rating: '5.0つ星評価',
@@ -1548,11 +1535,9 @@ export const translations = {
     ui: {
       meta: {
         title: 'ウィン・ラスベガスVIPホスト | ウィニー・リー — エリートコンシェルジュ',
-        description: 'ウィンのエリート多言語VIPホスト、ウィニー・リーにご予約を。カジノコンプ、ボトルサービス、ナイトクラブへのアクセス、ラスベガスでの24時間コンシェルジュ。お気軽に直接ご連絡ください。'
+        description: 'ウィニー・リーは、ウィン・ラスベガスの多言語VIPカジノホストです。ウィンリワードのご相談、カジノコンプ、レストラン・ショーの予約、日本語・中国語・英語での24時間コンシェルジュ。'
       },
-      logoCaption: 'リワード',
-      brandName: 'ウィンリワード',
-      scrollTopAria: 'ウィンリワード - ページトップへ',
+      scrollTopAria: 'Vegas VIP Host - ページトップへ',
       toggleMenuAria: 'メニューの開閉',
       navAria: {
         services: 'VIPサービス',
@@ -1629,7 +1614,6 @@ export const translations = {
         ctaTitle: 'ウィニー・リーに直接連絡',
         ctaText: 'ウィニー・リーは英語、中国語（北京語）、台湾語、日本語に堪能です。ラスベガスでのVIP体験の計画を、今すぐ始めましょう。',
         ctaButton: 'VIPの旅を始める →',
-        copyright: '© 2026 ウィンリワードVIPサービス · ウィニー・リー',
         backHome: '← ホームに戻る',
         hostTip: 'ホストのアドバイス',
         hostNote: 'ホストより'

@@ -14,7 +14,13 @@ export function HostProfile() {
         {/* LEFT — Image column, edge-to-edge atmospheric */}
         <div className="relative order-2 lg:order-1 min-h-[380px] sm:min-h-[480px] lg:min-h-[600px] overflow-hidden rounded-xl lg:rounded-r-none lg:rounded-l-xl">
           <img
-            src="https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&w=1200&q=75"
+            srcSet="https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&w=640&q=75 640w, https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&w=1200&q=75 1200w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            width={1200}
+            height={800}
+            loading="lazy"
+            decoding="async"
             alt={t('ui.host.imageAlt')}
             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
           />

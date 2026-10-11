@@ -13,6 +13,7 @@ import { ServicesSection } from './sections/ServicesSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { ContactSection } from './sections/ContactSection';
 import { useLanguage } from './contexts/LanguageContext';
+import { BRAND } from './brand';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,7 @@ function App() {
       {/* Header / Hero */}
       <header className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0">
-          <img src={wynnEncoreNight} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-contain object-center opacity-50" />
+          <img src={wynnEncoreNight} alt="" aria-hidden="true" width={1600} height={900} className="absolute inset-0 w-full h-full object-contain object-center opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 via-transparent to-navy-950"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-royal-500/10 via-transparent to-royal-500/10"></div>
         </div>
@@ -60,8 +61,8 @@ function App() {
               <button onClick={scrollToTop} className="flex items-center gap-3 group flex-shrink-0" aria-label={t('ui.scrollTopAria')}>
                 <span className="w-px h-7 sm:h-8 lg:h-10 bg-royal-500/60 group-hover:bg-royal-500 transition-colors duration-300 flex-shrink-0" />
                 <div className="flex flex-col leading-none">
-                  <span className="font-serif italic text-white text-xl sm:text-2xl lg:text-3xl leading-none tracking-wide group-hover:text-royal-300 transition-colors duration-300">Wynn</span>
-                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">{t('ui.logoCaption')}</span>
+                  <span className="font-serif italic text-white text-lg sm:text-xl lg:text-2xl leading-none tracking-wide group-hover:text-royal-300 transition-colors duration-300 whitespace-nowrap">{BRAND.name}</span>
+                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">{BRAND.person}</span>
                 </div>
               </button>
 
@@ -164,7 +165,7 @@ function App() {
       {/* Host Profile */}
       <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 md:opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&w=1600&q=70')] bg-cover bg-center opacity-30 md:opacity-20"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 to-navy-950/90"></div>
         </div>
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 relative">
@@ -211,10 +212,10 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="flex items-center">
               <Crown className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-royal-500" />
-              <span className="ml-2 sm:ml-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{t('ui.brandName')}</span>
+              <span className="ml-2 sm:ml-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif">{BRAND.name}<span className="text-cream-200/60 font-normal"> / {BRAND.person}</span></span>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-cream-100 text-sm sm:text-base md:text-lg lg:text-xl">{t('footer.copyright')}</p>
+              <p className="text-cream-100 text-sm sm:text-base md:text-lg lg:text-xl">© {new Date().getFullYear()} {BRAND.name} · {BRAND.person}</p>
               <p className="text-cream-200 text-xs sm:text-sm md:text-base lg:text-lg mt-1 sm:mt-2">{t('footer.subtitle')}</p>
             </div>
           </div>

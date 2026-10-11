@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap');
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -512,6 +510,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 5s linear infinite;
+  }
+
+  /* Both classes set `animation`; without this the shimmer replaces the fade-in and the text stays at opacity 0. */
+  .text-gold-foil.animate-fade-up {
+    animation: fade-up 0.8s ease forwards, shimmer 5s linear infinite;
   }
 
   /* Thin purple divider line */

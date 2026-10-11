@@ -1,7 +1,7 @@
 {
   "name": "Vegas VIP Host - Winnie Lee",
   "short_name": "VIP Host",
-  "description": "Elite VIP host services in Las Vegas - Wynn casino host, nightclub bottle service, and luxury concierge",
+  "description": "Winnie Lee, multilingual VIP casino host at Wynn Las Vegas — Wynn Rewards, casino comps and 24/7 concierge",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e1b4b",
@@ -10,10 +10,14 @@
   "scope": "/",
   "lang": "en-US",
   "dir": "ltr",
-  "categories": ["lifestyle", "entertainment", "travel"],
+  "categories": [
+    "lifestyle",
+    "entertainment",
+    "travel"
+  ],
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -53,7 +57,7 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "/vite.svg",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]
@@ -65,7 +69,7 @@
       "url": "/#services",
       "icons": [
         {
-          "src": "/vite.svg",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]
@@ -74,10 +78,10 @@
       "name": "Book Now",
       "short_name": "Book",
       "description": "Request VIP reservation",
-      "url": "/#booking",
+      "url": "/#contact",
       "icons": [
         {
-          "src": "/vite.svg",
+          "src": "/favicon.svg",
           "sizes": "96x96"
         }
       ]

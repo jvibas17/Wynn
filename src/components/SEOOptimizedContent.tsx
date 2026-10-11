@@ -4,7 +4,7 @@ import { AnimatedSection } from './AnimatedSection';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function SEOOptimizedContent() {
-  const { t } = useLanguage();
+  const { t, path } = useLanguage();
 
   const services = [
     { key: 'casinoHost', numeral: 'I' },
@@ -110,15 +110,16 @@ export function SEOOptimizedContent() {
                   accent: 'hover:border-royal-500/40 hover:bg-royal-500/5',
                 },
                 {
-                  to: '/wynn-rewards-guide#chairmans-club',
+                  to: '/wynn-rewards-guide',
+                  hash: '#chairmans-club',
                   guide: 'chairman',
                   accent: 'hover:border-amber-400/50 hover:bg-amber-500/5',
                   gold: true,
                 },
-              ].map(({ to, guide, accent, gold }) => (
+              ].map(({ to, hash, guide, accent, gold }) => (
                 <Link
-                  key={to}
-                  to={to}
+                  key={guide}
+                  to={path(to) + (hash ?? '')}
                   className={`group block border p-5 lg:p-6 transition-all duration-300 ${gold ? 'border-amber-400/20' : 'border-royal-500/15'} ${accent}`}
                 >
                   {gold && (

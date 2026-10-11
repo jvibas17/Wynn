@@ -62,6 +62,10 @@ export function ExperienceSection() {
                 <img
                   src={wynnExterior}
                   alt={t('ui.experienceImageAlt')}
+                  width={700}
+                  height={875}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto max-h-96 sm:max-h-none object-cover transform hover:scale-105 transition-transform duration-700"
                 />
                 {/* Dark gradient overlay on image bottom */}

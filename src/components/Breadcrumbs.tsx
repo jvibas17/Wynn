@@ -7,10 +7,10 @@ interface BreadcrumbItem {
 }
 
 export function Breadcrumbs() {
-  const { t } = useLanguage();
+  const { t, path } = useLanguage();
 
   const breadcrumbs: BreadcrumbItem[] = [
-    { label: t('breadcrumbs.home'), href: '/' },
+    { label: t('breadcrumbs.home'), href: path('/') },
     { label: t('breadcrumbs.services'), href: '#services' },
     { label: t('breadcrumbs.location'), href: '#', current: true },
   ];

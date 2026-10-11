@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section className="py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative aurora-glow" id="contact">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&q=80')] bg-cover bg-bottom opacity-30 md:opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1663425561986-3c67758d2c54?auto=format&fit=crop&w=1600&q=70')] bg-cover bg-bottom opacity-30 md:opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/90 to-navy-950/90"></div>
       </div>
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 relative">
