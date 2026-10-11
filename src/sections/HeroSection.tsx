@@ -14,9 +14,9 @@ export function HeroSection() {
 
       {/* Massive Roman numeral year accent — top right corner */}
       <div className="hidden md:block absolute top-28 right-0 z-0 text-right pr-4 lg:pr-12 opacity-100">
-        <div className="accent-numeral">MMXXV</div>
-        <div className="text-[0.55rem] tracking-[0.45em] uppercase text-royal-400/40 mt-2 mr-2">
-          {t('ui.hero.annoDomini')}
+        <div className="accent-numeral">{toRoman(new Date().getFullYear())}</div>
+        <div className="text-[0.55rem] tracking-[0.45em] uppercase text-royal-400/85 mt-2 mr-2">
+          {t('ui.hero.annoDomini').replace('{year}', String(new Date().getFullYear()))}
         </div>
       </div>
 
@@ -70,4 +70,16 @@ export function HeroSection() {
       </div>
     </div>
   );
+}
+
+function toRoman(year: number) {
+  const numerals: [number, string][] = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let out = '';
+  for (const [value, numeral] of numerals) {
+    while (year >= value) {
+      out += numeral;
+      year -= value;
+    }
+  }
+  return out;
 }

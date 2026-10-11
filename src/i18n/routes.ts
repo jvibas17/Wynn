@@ -7,6 +7,7 @@ export const PAGE_PATHS = [
   '/wynn-rewards-guide',
   '/how-to-get-comps-at-wynn-las-vegas',
   '/multilingual-vip-host-las-vegas',
+  '/privacy-policy',
 ] as const;
 
 export type PagePath = (typeof PAGE_PATHS)[number];

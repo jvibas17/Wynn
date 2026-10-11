@@ -125,14 +125,14 @@ export function SEOOptimizedContent() {
                   {gold && (
                     <div className="flex items-center gap-2 mb-3">
                       <span className="inline-block w-1 h-1 rounded-full bg-amber-400/70" />
-                      <span className="text-[0.55rem] tracking-[0.25em] uppercase text-amber-400/50 font-medium">{t('ui.guides.inviteOnly')}</span>
+                      <span className="text-[0.55rem] tracking-[0.25em] uppercase text-amber-400/85 font-medium">{t('ui.guides.inviteOnly')}</span>
                     </div>
                   )}
                   <h3 className={`font-serif font-semibold text-white text-base lg:text-lg mb-2 leading-snug transition-colors ${gold ? 'group-hover:text-amber-300' : 'group-hover:text-royal-300'}`}>
                     {t(`ui.guides.${guide}.title`)}
                   </h3>
                   <p className="text-cream-100/50 text-sm leading-relaxed mb-4">{t(`ui.guides.${guide}.desc`)}</p>
-                  <span className={`text-[0.6rem] tracking-[0.18em] uppercase transition-colors ${gold ? 'text-amber-400/40 group-hover:text-amber-400' : 'text-royal-400/50 group-hover:text-royal-400'}`}>
+                  <span className={`text-[0.6rem] tracking-[0.18em] uppercase transition-colors ${gold ? 'text-amber-400/80 group-hover:text-amber-300' : 'text-royal-400/85 group-hover:text-royal-300'}`}>
                     {t('ui.guides.readGuide')}
                   </span>
                 </Link>

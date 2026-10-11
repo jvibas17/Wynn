@@ -44,7 +44,7 @@ export function HostProfile() {
 
           {/* Vertical rail — right edge of image */}
           <div className="hidden lg:flex absolute right-4 top-8 bottom-8 items-center">
-            <span className="vertical-rail opacity-30">{t('ui.host.rail')}</span>
+            <span className="vertical-rail">{t('ui.host.rail')}</span>
           </div>
         </div>
 

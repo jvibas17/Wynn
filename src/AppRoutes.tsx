@@ -6,12 +6,14 @@ import { WynnRewardsGuide } from './pages/WynnRewardsGuide';
 import { GetCompsAtWynn } from './pages/GetCompsAtWynn';
 import { MultilingualVIPHost } from './pages/MultilingualVIPHost';
 import { NotFound } from './pages/NotFound';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 
 const PAGES: Record<PagePath, () => JSX.Element> = {
   '/': App,
   '/wynn-rewards-guide': WynnRewardsGuide,
   '/how-to-get-comps-at-wynn-las-vegas': GetCompsAtWynn,
   '/multilingual-vip-host-las-vegas': MultilingualVIPHost,
+  '/privacy-policy': PrivacyPolicy,
 };
 
 export function AppRoutes() {

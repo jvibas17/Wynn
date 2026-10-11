@@ -107,7 +107,8 @@ export const translations = {
       form: {
         name: 'Your Name',
         email: 'Email Address', 
-        phone: 'Phone Number',
+        phone: 'Phone Number (optional)',
+        message: 'Travel dates, number of guests, anything Winnie should know (optional)',
         submit: 'Request VIP Service',
         sending: 'Sending Request...',
         success: 'Thank you! Winnie Lee will contact you within 24 hours to discuss your VIP experience.',
@@ -307,6 +308,11 @@ export const translations = {
         title: 'Wynn VIP Host Las Vegas | Winnie Lee — Elite Concierge',
         description: 'Winnie Lee, multilingual VIP casino host at Wynn Las Vegas. Wynn Rewards guidance, casino comps, dining & show reservations and 24/7 concierge in English, Chinese & Japanese.'
       },
+      privacy: {
+        notice: 'By submitting, you agree to our {link}.',
+        link: 'Privacy Policy',
+        disclaimer: 'Independent personal website of Winnie Lee. Not an official Wynn Resorts website.'
+      },
       scrollTopAria: 'Vegas VIP Host - Scroll to top',
       toggleMenuAria: 'Toggle mobile menu',
       navAria: {
@@ -388,25 +394,6 @@ export const translations = {
         hostTip: 'Host Tip',
         hostNote: 'Host Note'
       }
-    },
-    chatbot: {
-      name: 'Cena',
-      title: 'VIP Concierge Assistant',
-      placeholder: 'Ask about VIP services...',
-      introMessage: 'Hi! I can help with VIP services info! 💜',
-      footer: 'Powered by AI • For bookings, contact Winnie Lee directly'
-    },
-    pet: {
-      name: 'Picasso',
-      companion: 'Your VIP Companion',
-      stats: 'Pet Stats',
-      mood: 'Mood',
-      activity: 'Activity',
-      energy: 'Energy',
-      happiness: 'Happiness', 
-      attention: 'Attention',
-      personality: 'Personality',
-      clickTip: 'Click me to interact! Double-click to chat!'
     }
   },
   zh: {
@@ -517,7 +504,8 @@ export const translations = {
       form: {
         name: '您的姓名',
         email: '电子邮箱',
-        phone: '电话号码',
+        phone: '电话号码（选填）',
+        message: '出行日期、人数及其他需要告诉李慧敏的信息（选填）',
         submit: '申请VIP服务',
         sending: '发送请求中...',
         success: '谢谢！李慧敏将在24小时内联系您讨论您的VIP体验。',
@@ -717,6 +705,11 @@ export const translations = {
         title: '拉斯维加斯永利VIP主管 | 李慧敏 — 精英礼宾服务',
         description: '李慧敏，拉斯维加斯永利多语言VIP赌场主管。提供永利奖励咨询、赌场免费招待、餐厅及演出预订，以及中文、英语和日语24小时礼宾服务。'
       },
+      privacy: {
+        notice: '提交即表示您同意我们的{link}。',
+        link: '隐私政策',
+        disclaimer: '李慧敏的独立个人网站，并非永利度假村官方网站。'
+      },
       scrollTopAria: 'Vegas VIP Host - 返回顶部',
       toggleMenuAria: '打开或关闭菜单',
       navAria: {
@@ -730,7 +723,7 @@ export const translations = {
       marquee: ['私密周到', '量身定制', '多语言服务', '永利奖励', 'VIP通道', '尊享专属'],
       hero: {
         rail: '拉斯维加斯永利 — VIP礼宾 — 始于2005',
-        annoDomini: '二〇二五 · 拉斯维加斯',
+        annoDomini: '{year}年 · 拉斯维加斯',
         invitation: '专属邀约',
         directAccess: '直接联系',
         languages: '提供英语、普通话、台语和日语多语言服务。个性化且私密周到。'
@@ -798,25 +791,6 @@ export const translations = {
         hostTip: '主管建议',
         hostNote: '主管提示'
       }
-    },
-    chatbot: {
-      name: 'Cena',
-      title: 'VIP礼宾助手',
-      placeholder: '询问VIP服务信息...',
-      introMessage: '您好！我可以帮助您了解VIP服务信息！💜',
-      footer: 'AI驱动 • 预订请直接联系李慧敏'
-    },
-    pet: {
-      name: 'Picasso',
-      companion: '您的VIP伙伴',
-      stats: '宠物状态',
-      mood: '心情',
-      activity: '活动',
-      energy: '精力',
-      happiness: '快乐度',
-      attention: '关注度',
-      personality: '性格',
-      clickTip: '点击我互动！双击聊天！'
     }
   },
   'zh-tw': {
@@ -927,7 +901,8 @@ export const translations = {
       form: {
         name: '您的姓名',
         email: '電子郵箱',
-        phone: '電話號碼',
+        phone: '電話號碼（選填）',
+        message: '出行日期、人數及其他需要告訴李慧敏的資訊（選填）',
         submit: '申請VIP服務',
         sending: '發送請求中...',
         success: '謝謝！李慧敏將在24小時內聯繫您討論您的VIP體驗。',
@@ -1127,6 +1102,11 @@ export const translations = {
         title: '拉斯維加斯永利VIP主管 | 李慧敏 — 精英禮賓服務',
         description: '李慧敏，拉斯維加斯永利多語言VIP賭場主管。提供永利獎勵諮詢、賭場免費招待、餐廳及演出預訂，以及中文、英語和日語24小時禮賓服務。'
       },
+      privacy: {
+        notice: '提交即表示您同意我們的{link}。',
+        link: '隱私權政策',
+        disclaimer: '李慧敏的獨立個人網站，並非永利度假村官方網站。'
+      },
       scrollTopAria: 'Vegas VIP Host - 返回頂部',
       toggleMenuAria: '開啟或關閉選單',
       navAria: {
@@ -1140,7 +1120,7 @@ export const translations = {
       marquee: ['私密周到', '量身定製', '多語言服務', '永利獎勵', 'VIP通道', '尊享專屬'],
       hero: {
         rail: '拉斯維加斯永利 — VIP禮賓 — 始於2005',
-        annoDomini: '二〇二五 · 拉斯維加斯',
+        annoDomini: '{year}年 · 拉斯維加斯',
         invitation: '專屬邀約',
         directAccess: '直接聯絡',
         languages: '提供英語、普通話、臺語和日語多語言服務。個性化且私密周到。'
@@ -1208,25 +1188,6 @@ export const translations = {
         hostTip: '主管建議',
         hostNote: '主管提示'
       }
-    },
-    chatbot: {
-      name: 'Cena',
-      title: 'VIP禮賓助手',
-      placeholder: '詢問VIP服務資訊...',
-      introMessage: '您好！我可以幫助您了解VIP服務資訊！💜',
-      footer: 'AI驅動 • 預訂請直接聯繫李慧敏'
-    },
-    pet: {
-      name: 'Picasso',
-      companion: '您的VIP夥伴',
-      stats: '寵物狀態',
-      mood: '心情',
-      activity: '活動',
-      energy: '精力',
-      happiness: '快樂度',
-      attention: '關注度',
-      personality: '性格',
-      clickTip: '點擊我互動！雙擊聊天！'
     }
   },
   ja: {
@@ -1337,7 +1298,8 @@ export const translations = {
       form: {
         name: 'お名前',
         email: 'メールアドレス',
-        phone: '電話番号',
+        phone: '電話番号（任意）',
+        message: 'ご旅行の日程、人数、その他ウィニー・リーへのご要望（任意）',
         submit: 'VIPサービスを要求',
         sending: 'リクエスト送信中...',
         success: 'ありがとうございます！ウィニー・リーが24時間以内にあなたのVIPエクスペリエンスについて連絡いたします。',
@@ -1537,6 +1499,11 @@ export const translations = {
         title: 'ウィン・ラスベガスVIPホスト | ウィニー・リー — エリートコンシェルジュ',
         description: 'ウィニー・リーは、ウィン・ラスベガスの多言語VIPカジノホストです。ウィンリワードのご相談、カジノコンプ、レストラン・ショーの予約、日本語・中国語・英語での24時間コンシェルジュ。'
       },
+      privacy: {
+        notice: '送信することで、{link}に同意したものとみなされます。',
+        link: 'プライバシーポリシー',
+        disclaimer: 'ウィニー・リーの独立した個人ウェブサイトです。ウィン・リゾーツの公式ウェブサイトではありません。'
+      },
       scrollTopAria: 'Vegas VIP Host - ページトップへ',
       toggleMenuAria: 'メニューの開閉',
       navAria: {
@@ -1550,7 +1517,7 @@ export const translations = {
       marquee: ['プライバシー重視', 'オーダーメイド', '多言語対応', 'ウィンリワード', 'VIPアクセス', 'エクスクルーシブ'],
       hero: {
         rail: 'ウィン・ラスベガス — VIPコンシェルジュ — 2005年創業',
-        annoDomini: '二〇二五年 · ラスベガス',
+        annoDomini: '{year}年 · ラスベガス',
         invitation: '特別なご招待',
         directAccess: 'ダイレクトアクセス',
         languages: '英語・中国語（北京語）・台湾語・日本語に対応。きめ細やかで、プライバシーにも配慮します。'
@@ -1618,25 +1585,6 @@ export const translations = {
         hostTip: 'ホストのアドバイス',
         hostNote: 'ホストより'
       }
-    },
-    chatbot: {
-      name: 'Cena',
-      title: 'VIPコンシェルジュアシスタント',
-      placeholder: 'VIPサービスについて質問...',
-      introMessage: 'こんにちは！VIPサービス情報のお手伝いができます！💜',
-      footer: 'AI駆動 • 予約はウィニー・リーに直接連絡'
-    },
-    pet: {
-      name: 'Picasso',
-      companion: 'あなたのVIPコンパニオン',
-      stats: 'ペット統計',
-      mood: '気分',
-      activity: '活動',
-      energy: 'エネルギー',
-      happiness: '幸福度',
-      attention: '注目度',
-      personality: '性格',
-      clickTip: 'クリックして交流！ダブルクリックでチャット！'
     }
   }
 };

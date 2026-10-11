@@ -104,9 +104,9 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
             ))}
             {locked.length > 0 && (
               <div className="pt-2 space-y-2">
-                <p className="text-xs text-white/25 uppercase tracking-widest">{t('tiers.higherTiers')}</p>
+                <p className="text-xs text-white/55 uppercase tracking-widest">{t('tiers.higherTiers')}</p>
                 {locked.map((b, i) => (
-                  <div key={i} className="flex items-start gap-3 text-white/20 text-sm">
+                  <div key={i} className="flex items-start gap-3 text-white/45 text-sm">
                     <span className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
                     <span>{t(b.name)}</span>
                   </div>
@@ -176,7 +176,7 @@ export function RewardCard({ tier, title, tierRange, benefits }: RewardCardProps
 
       {/* Terms */}
       <div className="px-6 lg:px-8 pb-6 pt-2">
-        <p className="text-xs text-white/25 leading-relaxed">{t('tiers.termsNote')}</p>
+        <p className="text-xs text-white/55 leading-relaxed">{t('tiers.termsNote')}</p>
       </div>
     </div>
   );

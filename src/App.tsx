@@ -6,19 +6,19 @@ import { LanguageSwitch } from './components/LanguageSwitch';
 import { StatCard } from './components/StatCard';
 import { HostProfile } from './components/HostProfile';
 import { FAQSection } from './components/FAQSection';
-import { Breadcrumbs } from './components/Breadcrumbs';
 import { SEOOptimizedContent } from './components/SEOOptimizedContent';
 import { HeroSection } from './sections/HeroSection';
 import { ServicesSection } from './sections/ServicesSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { ContactSection } from './sections/ContactSection';
 import { useLanguage } from './contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import { BRAND } from './brand';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t, language } = useLanguage();
+  const { t, language, path } = useLanguage();
 
   useEffect(() => {
     document.title = t('ui.meta.title');
@@ -45,8 +45,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950">
-      <Breadcrumbs />
-
       {/* Header / Hero */}
       <header className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0">
@@ -62,7 +60,7 @@ function App() {
                 <span className="w-px h-7 sm:h-8 lg:h-10 bg-royal-500/60 group-hover:bg-royal-500 transition-colors duration-300 flex-shrink-0" />
                 <div className="flex flex-col leading-none">
                   <span className="font-serif italic text-white text-lg sm:text-xl lg:text-2xl leading-none tracking-wide group-hover:text-royal-300 transition-colors duration-300 whitespace-nowrap">{BRAND.name}</span>
-                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/30 group-hover:text-royal-500/50 transition-colors duration-300 mt-1">{BRAND.person}</span>
+                  <span className="text-[0.45rem] sm:text-[0.5rem] tracking-[0.32em] uppercase text-cream-100/60 group-hover:text-royal-300 transition-colors duration-300 mt-1">{BRAND.person}</span>
                 </div>
               </button>
 
@@ -98,7 +96,7 @@ function App() {
                   onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                   className="group flex items-center gap-2.5 border border-royal-500/35 hover:border-royal-500/70 px-4 lg:px-5 py-2 lg:py-2.5 transition-all duration-300 hover:bg-royal-500/5 flex-shrink-0"
                 >
-                  <span className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.18em] uppercase text-royal-400/70 group-hover:text-royal-300 transition-colors duration-300 whitespace-nowrap">{t('hero.cta.contact')}</span>
+                  <span className="text-[0.6rem] lg:text-[0.65rem] tracking-[0.18em] uppercase text-royal-400/90 group-hover:text-royal-300 transition-colors duration-300 whitespace-nowrap">{t('hero.cta.contact')}</span>
                   <span className="text-royal-400/50 group-hover:text-royal-300 group-hover:translate-x-0.5 transition-all duration-300 text-xs leading-none">→</span>
                 </a>
               </div>
@@ -217,14 +215,11 @@ function App() {
             <div className="text-center md:text-right">
               <p className="text-cream-100 text-sm sm:text-base md:text-lg lg:text-xl">© {new Date().getFullYear()} {BRAND.name} · {BRAND.person}</p>
               <p className="text-cream-200 text-xs sm:text-sm md:text-base lg:text-lg mt-1 sm:mt-2">{t('footer.subtitle')}</p>
+              <p className="text-cream-200/70 text-xs sm:text-sm mt-3">{t('ui.privacy.disclaimer')} · <Link to={path('/privacy-policy')} className="underline underline-offset-2 hover:text-royal-300">{t('ui.privacy.link')}</Link></p>
             </div>
           </div>
         </div>
       </footer>
-
-      {/* Chatbot & WhatsApp — disabled */}
-      {/* {!showWhatsAppChat && <ChatBot onOpenWhatsApp={() => setShowWhatsAppChat(true)} />} */}
-      {/* {showWhatsAppChat && <WhatsAppChat onClose={() => setShowWhatsAppChat(false)} />} */}
     </div>
   );
 }

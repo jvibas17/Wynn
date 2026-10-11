@@ -17,7 +17,7 @@ export function LanguageSwitch() {
       {LANGS.map(({ code, label, hreflang }, i) => (
         <span key={code} className="flex items-center">
           {i > 0 && (
-            <span className="text-white/12 mx-1.5 text-[0.55rem] select-none" aria-hidden="true">·</span>
+            <span className="text-white/20 mx-1.5 text-[0.55rem] select-none" aria-hidden="true">·</span>
           )}
           <Link
             to={switchPath(code) + hash}
@@ -27,7 +27,7 @@ export function LanguageSwitch() {
             className={`text-[0.6rem] tracking-[0.12em] uppercase transition-all duration-200 touch-manipulation py-1 ${
               language === code
                 ? 'text-royal-400 font-semibold'
-                : 'text-white/28 hover:text-white/60 font-medium'
+                : 'text-white/65 hover:text-white font-medium'
             }`}
           >
             {label}

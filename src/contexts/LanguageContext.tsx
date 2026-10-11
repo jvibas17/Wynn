@@ -11,6 +11,8 @@ const STORAGE_KEY = 'wynn-language';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
+  // Values are strings or arrays/objects of strings depending on the key.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   t: (key: string) => any;
   /** Path to a page in the current language, e.g. path('/wynn-rewards-guide') → '/zh/wynn-rewards-guide' */
   path: (pagePath: string) => string;
@@ -54,6 +56,7 @@ export function LanguageProvider({ language, children }: { language: Language; c
 
   const t = (key: string) => {
     const keys = key.split('.');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let value: any = translations[language];
 
     for (const k of keys) {

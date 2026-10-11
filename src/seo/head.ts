@@ -5,6 +5,7 @@ import type { Article } from '../i18n/articles/types';
 import { wynnRewardsGuide } from '../i18n/articles/wynnRewardsGuide';
 import { getCompsAtWynn } from '../i18n/articles/getCompsAtWynn';
 import { multilingualVIPHost } from '../i18n/articles/multilingualVIPHost';
+import { privacyPolicy } from '../i18n/articles/privacyPolicy';
 import { BRAND } from '../brand';
 
 const SITE = 'https://vegasviphost.net';
@@ -19,6 +20,7 @@ const ARTICLES: Partial<Record<PagePath, Record<Language, Article>>> = {
   '/wynn-rewards-guide': wynnRewardsGuide,
   '/how-to-get-comps-at-wynn-las-vegas': getCompsAtWynn,
   '/multilingual-vip-host-las-vegas': multilingualVIPHost,
+  '/privacy-policy': privacyPolicy,
 };
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -130,7 +132,12 @@ export function buildHead(pagePath: PagePath, language: Language): { head: strin
   const title = article ? article.docTitle : translations[language].ui.meta.title;
   const description = article ? article.metaDescription : translations[language].ui.meta.description;
   const canonical = url(pagePath, language);
-  const schema = article ? articleSchema(pagePath, language, article) : homeSchema(language);
+  const isLegal = pagePath === '/privacy-policy';
+  const schema = isLegal
+    ? [{ '@context': 'https://schema.org', '@type': 'WebPage', name: title, url: canonical, inLanguage: HREFLANG[language] }]
+    : article
+      ? articleSchema(pagePath, language, article)
+      : homeSchema(language);
 
   const lines = [
     `<title>${esc(title)}</title>`,
@@ -139,7 +146,7 @@ export function buildHead(pagePath: PagePath, language: Language): { head: strin
     `<link rel="canonical" href="${canonical}">`,
     ...LANGUAGES.map(l => `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${url(pagePath, l)}">`),
     `<link rel="alternate" hreflang="x-default" href="${url(pagePath, 'en')}">`,
-    `<meta property="og:type" content="${article ? 'article' : 'website'}">`,
+    `<meta property="og:type" content="${article && !isLegal ? 'article' : 'website'}">`,
     `<meta property="og:site_name" content="${esc(SITE_NAME)}">`,
     `<meta property="og:url" content="${canonical}">`,
     `<meta property="og:title" content="${esc(title)}">`,
@@ -177,7 +184,7 @@ export function buildSitemap(): string {
         `    <loc>${url(pagePath, language)}</loc>`,
         `    <lastmod>${today}</lastmod>`,
         `    <changefreq>${pagePath === '/' ? 'weekly' : 'monthly'}</changefreq>`,
-        `    <priority>${pagePath === '/' ? (language === 'en' ? '1.0' : '0.9') : '0.8'}</priority>`,
+        `    <priority>${pagePath === '/' ? (language === 'en' ? '1.0' : '0.9') : pagePath === '/privacy-policy' ? '0.3' : '0.8'}</priority>`,
         alternates,
         '  </url>',
       ].join('\n');

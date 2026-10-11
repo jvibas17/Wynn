@@ -46,7 +46,7 @@ export function FAQSection() {
                 className={`
                   w-full text-left py-4 px-0 flex items-start gap-4 group transition-all duration-300
                   border-b border-royal-500/10 last:border-b-0
-                  ${openIndex === i ? 'text-royal-400' : 'text-cream-200/40 hover:text-cream-100/70'}
+                  ${openIndex === i ? 'text-royal-400' : 'text-cream-200/65 hover:text-cream-100'}
                 `}
               >
                 <span className={`

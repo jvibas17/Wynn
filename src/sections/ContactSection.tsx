@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { AnimatedSection } from '../components/AnimatedSection';
 import { LeadCaptureForm } from '../components/LeadCaptureForm';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -38,7 +38,15 @@ export function ContactSection() {
                     <Mail className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-royal-500" />
                   </div>
                   <div>
-                    <p className="group-hover:text-royal-500 transition-colors text-sm sm:text-base md:text-lg lg:text-xl break-all">lovepicaso888@gmail.com</p>
+                    <a href="mailto:lovepicaso888@gmail.com" className="group-hover:text-royal-500 transition-colors text-sm sm:text-base md:text-lg lg:text-xl break-all">lovepicaso888@gmail.com</a>
+                  </div>
+                </div>
+                <div className="flex items-center text-cream-100 group">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 rounded-full bg-navy-800/50 flex items-center justify-center mr-3 sm:mr-4 md:mr-6 group-hover:bg-royal-500/20 transition-colors flex-shrink-0">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 text-royal-500" />
+                  </div>
+                  <div>
+                    <a href="tel:+17023550238" className="group-hover:text-royal-500 transition-colors text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap">+1 (702) 355-0238</a>
                   </div>
                 </div>
                 <div className="flex items-center text-cream-100 group">

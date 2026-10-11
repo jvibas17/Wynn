@@ -1,16 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
 import { CTAButton } from './CTAButton';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function LeadCaptureForm() {
-  const { t } = useLanguage();
+  const { t, path, language } = useLanguage();
+  const notice = (t('ui.privacy.notice') as string).split('{link}');
   const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    message: ''
   });
+  // Hidden from people; bots that fill every field reveal themselves here.
+  const [trap, setTrap] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -23,6 +28,12 @@ export function LeadCaptureForm() {
     
     if (isSubmitting) return;
 
+    if (trap) {
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -34,9 +45,10 @@ export function LeadCaptureForm() {
         to_email: 'lovepicaso888@gmail.com',
         name: formData.name,
         email: formData.email,
-        phone: formData.phone,
+        phone: formData.phone || '—',
+        message: formData.message || '—',
+        language,
       };
-      console.log('Admin template params:', adminTemplateParams);
 
       await emailjs.send(
         'service_7p441ia',
@@ -47,7 +59,7 @@ export function LeadCaptureForm() {
 
       // Admin email succeeded — mark success immediately
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
 
       try {
         const guestTemplateParams = {
@@ -64,7 +76,7 @@ export function LeadCaptureForm() {
           guestTemplateParams,
           'CoRTPrMWNM5iX2ws4'
         );
-      } catch (_) {
+      } catch {
         // auto-reply failure is non-critical
       }
     } catch (error) {
@@ -76,7 +88,7 @@ export function LeadCaptureForm() {
   };
 
   return (
-    <form ref={form} onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+    <form ref={form} onSubmit={handleSubmit} className="relative space-y-6 sm:space-y-8">
       <div>
         <input
           type="text"
@@ -107,15 +119,36 @@ export function LeadCaptureForm() {
           className="input-field text-lg sm:text-xl py-4 sm:py-5"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          required
         />
+      </div>
+      <div>
+        <textarea
+          name="message"
+          placeholder={t('contact.form.message')}
+          rows={3}
+          maxLength={2000}
+          className="input-field text-lg sm:text-xl py-4 sm:py-5 resize-y"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+        />
+      </div>
+      <div className="absolute -left-[10000px] w-px h-px overflow-hidden" aria-hidden="true">
+        <label>
+          Company
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} />
+        </label>
       </div>
       <CTAButton 
         text={isSubmitting ? t('contact.form.sending') : t('contact.form.submit')} 
         className="w-full text-lg sm:text-xl py-5 sm:py-6" 
         showArrow={!isSubmitting}
       />
-      
+      <p className="text-cream-200/70 text-xs sm:text-sm leading-relaxed">
+        {notice[0]}
+        <Link to={path('/privacy-policy')} className="underline underline-offset-2 hover:text-royal-300">{t('ui.privacy.link')}</Link>
+        {notice[1]}
+      </p>
+
       {submitStatus === 'success' && (
         <div className="p-4 sm:p-6 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-base sm:text-lg">
           {t('contact.form.success')}

@@ -1,5 +1,6 @@
 import { Fragment, useEffect } from 'react';
 import { Crown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LanguageSwitch } from '../components/LanguageSwitch';
 import { useLanguage, type Language } from '../contexts/LanguageContext';
 import type { Article, ArticleBlock } from '../i18n/articles/types';
@@ -7,9 +8,11 @@ import { BRAND } from '../brand';
 
 interface BlogLayoutProps {
   article: Record<Language, Article>;
+  /** Legal pages (privacy policy) drop the guide badge, byline and contact banner. */
+  legal?: boolean;
 }
 
-export function BlogLayout({ article }: BlogLayoutProps) {
+export function BlogLayout({ article, legal = false }: BlogLayoutProps) {
   const { language, t, path } = useLanguage();
   const home = path('/');
   const content = article[language];
@@ -40,7 +43,7 @@ export function BlogLayout({ article }: BlogLayoutProps) {
               <span className="w-px h-7 bg-royal-500/60 group-hover:bg-royal-500 transition-colors" />
               <div className="flex flex-col leading-none">
                 <span className="font-serif italic text-white text-lg sm:text-xl leading-none tracking-wide group-hover:text-royal-300 transition-colors whitespace-nowrap">{BRAND.name}</span>
-                <span className="text-[0.45rem] tracking-[0.32em] uppercase text-cream-100/30 mt-1">{BRAND.person}</span>
+                <span className="text-[0.45rem] tracking-[0.32em] uppercase text-cream-100/60 mt-1">{BRAND.person}</span>
               </div>
             </a>
             <div className="flex items-center gap-4 sm:gap-6">
@@ -50,7 +53,7 @@ export function BlogLayout({ article }: BlogLayoutProps) {
                 onClick={(e) => { e.preventDefault(); scrollToContact(); }}
                 className="hidden sm:flex group items-center gap-2.5 border border-royal-500/35 hover:border-royal-500/70 px-4 py-2 transition-all duration-300 hover:bg-royal-500/5"
               >
-                <span className="text-[0.65rem] tracking-[0.18em] uppercase text-royal-400/70 group-hover:text-royal-300">{t('ui.blog.contact')}</span>
+                <span className="text-[0.65rem] tracking-[0.18em] uppercase text-royal-400/90 group-hover:text-royal-300">{t('ui.blog.contact')}</span>
                 <span className="text-royal-400/50 group-hover:text-royal-300 text-xs">→</span>
               </a>
             </div>
@@ -64,22 +67,24 @@ export function BlogLayout({ article }: BlogLayoutProps) {
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl relative">
-          <a href={home} className="inline-flex items-center gap-2 text-royal-400/60 hover:text-royal-400 text-xs tracking-[0.15em] uppercase mb-8 transition-colors">
+          <a href={home} className="inline-flex items-center gap-2 text-royal-400/85 hover:text-royal-300 text-xs tracking-[0.15em] uppercase mb-8 transition-colors">
             {t('ui.blog.back')}
           </a>
-          <div className="flex items-center gap-3 mb-6">
-            <Crown className="h-5 w-5 text-royal-500" />
-            <span className="text-[0.6rem] tracking-[0.28em] uppercase text-royal-400/60">{t('ui.blog.badge')}</span>
-          </div>
+          {!legal && (
+            <div className="flex items-center gap-3 mb-6">
+              <Crown className="h-5 w-5 text-royal-500" />
+              <span className="text-[0.6rem] tracking-[0.28em] uppercase text-royal-400/85">{t('ui.blog.badge')}</span>
+            </div>
+          )}
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">{content.title}</h1>
           <p className="text-cream-100/70 text-lg sm:text-xl leading-relaxed mb-8">{content.description}</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs tracking-[0.15em] uppercase text-cream-200/40">
+          {!legal && <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs tracking-[0.15em] uppercase text-cream-200/65">
             <span>{t('ui.blog.published')}</span>
             <span className="text-royal-500/30">✦</span>
             <span>{content.readTime}</span>
             <span className="text-royal-500/30">✦</span>
             <span>{t('ui.blog.byline')}</span>
-          </div>
+          </div>}
         </div>
       </div>
 
@@ -98,9 +103,9 @@ export function BlogLayout({ article }: BlogLayoutProps) {
       </div>
 
       {/* CTA */}
-      <div className="border-t border-royal-500/10 py-16 sm:py-24 bg-navy-950/80">
+      {!legal && <div className="border-t border-royal-500/10 py-16 sm:py-24 bg-navy-950/80">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-[0.6rem] tracking-[0.28em] uppercase text-royal-400/50 mb-4">{t('ui.blog.ctaLabel')}</p>
+          <p className="text-[0.6rem] tracking-[0.28em] uppercase text-royal-400/85 mb-4">{t('ui.blog.ctaLabel')}</p>
           <h2 className="font-serif italic text-3xl sm:text-4xl text-white mb-6">{t('ui.blog.ctaTitle')}</h2>
           <p className="text-cream-100/60 mb-8 max-w-lg mx-auto">{t('ui.blog.ctaText')}</p>
           <a
@@ -110,13 +115,19 @@ export function BlogLayout({ article }: BlogLayoutProps) {
             {t('ui.blog.ctaButton')}
           </a>
         </div>
-      </div>
+      </div>}
 
       {/* Footer */}
       <footer className="bg-navy-950 py-8 border-t border-royal-500/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-cream-200/30 tracking-wider">
-          <span>© {new Date().getFullYear()} {BRAND.name} · {BRAND.person}</span>
-          <a href={home} className="hover:text-royal-400 transition-colors uppercase tracking-[0.15em]">{t('ui.blog.backHome')}</a>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-cream-200/65 tracking-wider">
+          <div className="text-center sm:text-left space-y-1">
+            <p>© {new Date().getFullYear()} {BRAND.name} · {BRAND.person}</p>
+            <p>{t('ui.privacy.disclaimer')}</p>
+          </div>
+          <div className="flex items-center gap-5 uppercase tracking-[0.15em]">
+            <Link to={path('/privacy-policy')} className="hover:text-royal-300 transition-colors">{t('ui.privacy.link')}</Link>
+            <a href={home} className="hover:text-royal-300 transition-colors">{t('ui.blog.backHome')}</a>
+          </div>
         </div>
       </footer>
     </div>
@@ -151,14 +162,14 @@ function renderBlock(block: ArticleBlock, t: (key: string) => string) {
     case 'tip':
       return (
         <div className="my-6 pl-4 border-l-2 border-royal-500/50 bg-royal-500/5 py-4 pr-4 rounded-r-lg">
-          <p className="text-[0.6rem] tracking-[0.2em] uppercase text-royal-400/60 mb-2">{t('ui.blog.hostTip')}</p>
+          <p className="text-[0.6rem] tracking-[0.2em] uppercase text-royal-400/85 mb-2">{t('ui.blog.hostTip')}</p>
           <p className="text-cream-100/80 text-sm sm:text-base leading-relaxed">{inline(block[1])}</p>
         </div>
       );
     case 'note':
       return (
         <div className="my-6 pl-4 border-l-2 border-amber-400/50 bg-amber-500/5 py-4 pr-4 rounded-r-lg">
-          <p className="text-[0.6rem] tracking-[0.2em] uppercase text-amber-400/60 mb-2">{t('ui.blog.hostNote')}</p>
+          <p className="text-[0.6rem] tracking-[0.2em] uppercase text-amber-400/85 mb-2">{t('ui.blog.hostNote')}</p>
           <p className="text-cream-100/80 text-sm sm:text-base leading-relaxed">{inline(block[1])}</p>
         </div>
       );
