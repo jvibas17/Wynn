@@ -47,7 +47,6 @@ const person = {
   name: BRAND.person,
   jobTitle: 'VIP Casino Host',
   url: SITE + '/',
-  telephone: '+1-702-355-0238',
   email: 'lovepicaso888@gmail.com',
   worksFor: { '@type': 'Organization', name: 'Wynn Las Vegas', url: 'https://www.wynnlasvegas.com' },
   knowsLanguage: ['English', 'Mandarin Chinese', 'Taiwanese', 'Japanese'],
@@ -64,7 +63,6 @@ function homeSchema(language: Language) {
       description: tr.ui.meta.description,
       url: url('/', language),
       image: SHARE_IMAGE,
-      telephone: '+1-702-355-0238',
       email: 'lovepicaso888@gmail.com',
       priceRange: '$$$$',
       address: {

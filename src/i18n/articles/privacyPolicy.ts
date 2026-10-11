@@ -44,7 +44,7 @@ export const privacyPolicy: Record<Language, Article> = {
       ['h2', 'Changes to this policy'],
       ['p', 'If we change this policy, we will update this page and the effective date above.'],
       ['h2', 'Contact'],
-      ['p', 'Questions about this policy: lovepicaso888@gmail.com or +1 (702) 355-0238.'],
+      ['p', 'Questions about this policy: lovepicaso888@gmail.com.'],
     ],
   },
   zh: {
@@ -89,7 +89,7 @@ export const privacyPolicy: Record<Language, Article> = {
       ['h2', '政策变更'],
       ['p', '如本政策有所变更，我们将更新本页面及上方的生效日期。'],
       ['h2', '联系我们'],
-      ['p', '如对本政策有任何疑问：lovepicaso888@gmail.com 或 +1 (702) 355-0238。'],
+      ['p', '如对本政策有任何疑问：lovepicaso888@gmail.com。'],
     ],
   },
   'zh-tw': {
@@ -134,7 +134,7 @@ export const privacyPolicy: Record<Language, Article> = {
       ['h2', '政策變更'],
       ['p', '如本政策有所變更，我們將更新本頁面及上方的生效日期。'],
       ['h2', '聯絡我們'],
-      ['p', '如對本政策有任何疑問：lovepicaso888@gmail.com 或 +1 (702) 355-0238。'],
+      ['p', '如對本政策有任何疑問：lovepicaso888@gmail.com。'],
     ],
   },
   ja: {
@@ -179,7 +179,7 @@ export const privacyPolicy: Record<Language, Article> = {
       ['h2', '本ポリシーの変更'],
       ['p', '本ポリシーを変更する場合は、本ページと上記の施行日を更新します。'],
       ['h2', 'お問い合わせ'],
-      ['p', '本ポリシーに関するご質問：lovepicaso888@gmail.com または +1 (702) 355-0238'],
+      ['p', '本ポリシーに関するご質問：lovepicaso888@gmail.com'],
     ],
   },
 };
